@@ -17,7 +17,8 @@ const Subscribe = (props) => (
   >
     <Input
       type="hidden"
-      name="bot-field"
+      name="subscribe"
+      value="subscribe"
     />
     <FormGroup>
       <Input
@@ -26,6 +27,7 @@ const Subscribe = (props) => (
         placeholder="Your E-mail"
       />
     </FormGroup>
+    <FormGroup>
     <Button
       type="submit"
       className="float-right"
@@ -34,6 +36,7 @@ const Subscribe = (props) => (
     >
       Join
     </Button>
+    </FormGroup>
   </Form>
 );
 
