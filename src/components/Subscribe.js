@@ -8,8 +8,17 @@ import {
 
 
 const Subscribe = (props) => (
-  <Form>
-    <Input type="hidden" name="bot-field" />
+  <Form
+    action="/success"
+    name="subscribe"
+    method="post"
+    data-netlify="true"
+    data-netlify-honeypot="bot-field"
+  >
+    <Input
+      type="hidden"
+      name="bot-field"
+    />
     <FormGroup>
       <Input
         type="email"
