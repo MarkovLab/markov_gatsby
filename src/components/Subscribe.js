@@ -15,11 +15,7 @@ const Subscribe = (props) => (
     data-netlify="true"
     data-netlify-honeypot="bot-field"
   >
-    <Input
-      type="hidden"
-      name="subscribe"
-      value="subscribe"
-    />
+    <Input type="hidden" name="bot-field" />
     <FormGroup>
       <Input
         type="email"
@@ -28,14 +24,14 @@ const Subscribe = (props) => (
       />
     </FormGroup>
     <FormGroup>
-    <Button
-      type="submit"
-      className="float-right"
-      size="lg"
-      block
-    >
-      Join
-    </Button>
+      <Button
+        type="submit"
+        className="float-right"
+        size="lg"
+        block
+      >
+        Join
+      </Button>
     </FormGroup>
   </Form>
 );
