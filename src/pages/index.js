@@ -1,93 +1,62 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import Helmet from 'react-helmet'
-import Layout from '../components/layout'
-import Banner from '../components/Banner'
+import React from 'react';
+import {
+  Container,
+  Card,
+  CardBody
+} from 'reactstrap'
+import Helmet from 'react-helmet';
 
-import pic01 from '../assets/images/pic01.jpg'
-import pic02 from '../assets/images/pic02.jpg'
-import pic03 from '../assets/images/pic03.jpg'
-import pic04 from '../assets/images/pic04.jpg'
-import pic05 from '../assets/images/pic05.jpg'
-import pic06 from '../assets/images/pic06.jpg'
+import Layout from '../components/Layout';
+import Subscribe from '../components/Subscribe';
 
-class HomeIndex extends React.Component {
+import Logo from '../assets/images/logos/ml-symbol.svg';
+
+class Index extends React.Component {
     render() {
-
         return (
             <Layout>
-                <Helmet
-                    title="Gatsby Starter - Forty"
-                    meta={[
-                        { name: 'description', content: 'Sample' },
-                        { name: 'keywords', content: 'sample, something' },
-                    ]}
-                >
-                </Helmet>
+              <Helmet>
+                <title>Markov Lab - AI & Finance</title>
+                <meta
+                  name="description"
+                  content="Markov Lab"
+                />
+                <meta
+                  name="keywords"
+                  content="AI, finance, reinforcement learning, machine learning"
+                />
+                <meta
+                  name="author"
+                  content="Richard Kim"
+                />
+              </Helmet>
+              <Container>
+                <div id="banner">
+                <Card className="banner-card">
+                  <CardBody>
+                    <div className="banner-logo">
+                      <img
+                        src={Logo}
+                        alt="Markov Lab"
+                        className="banner-logo-symbol"
+                      />
+                      <span className="banner-logo-text">Markov Lab</span>
+                    </div>
+                    <h3 className="mission text-center">Collaborative online research platform for artificial intelligence across finance</h3>
 
-                <Banner />
-
-                <div id="main">
-                    <section id="one" className="tiles">
-                        <article style={{backgroundImage: `url(${pic01})`}}>
-                            <header className="major">
-                                <h3>Aliquam</h3>
-                                <p>Ipsum dolor sit amet</p>
-                            </header>
-                            <Link to="/landing" className="link primary"></Link>
-                        </article>
-                        <article style={{backgroundImage: `url(${pic02})`}}>
-                            <header className="major">
-                                <h3>Tempus</h3>
-                                <p>feugiat amet tempus</p>
-                            </header>
-                            <Link to="/landing" className="link primary"></Link>
-                        </article>
-                        <article style={{backgroundImage: `url(${pic03})`}}>
-                            <header className="major">
-                                <h3>Magna</h3>
-                                <p>Lorem etiam nullam</p>
-                            </header>
-                            <Link to="/landing" className="link primary"></Link>
-                        </article>
-                        <article style={{backgroundImage: `url(${pic04})`}}>
-                            <header className="major">
-                                <h3>Ipsum</h3>
-                                <p>Nisl sed aliquam</p>
-                            </header>
-                            <Link to="/landing" className="link primary"></Link>
-                        </article>
-                        <article style={{backgroundImage: `url(${pic05})`}}>
-                            <header className="major">
-                                <h3>Consequat</h3>
-                                <p>Ipsum dolor sit amet</p>
-                            </header>
-                            <Link to="/landing" className="link primary"></Link>
-                        </article>
-                        <article style={{backgroundImage: `url(${pic06})`}}>
-                            <header className="major">
-                                <h3>Etiam</h3>
-                                <p>Feugiat amet tempus</p>
-                            </header>
-                            <Link to="/landing" className="link primary"></Link>
-                        </article>
-                    </section>
-                    <section id="two">
-                        <div className="inner">
-                            <header className="major">
-                                <h2>Massa libero</h2>
-                            </header>
-                            <p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet pharetra et feugiat tempus.</p>
-                            <ul className="actions">
-                                <li><Link to="/landing" className="button next">Get Started</Link></li>
-                            </ul>
-                        </div>
-                    </section>
+                    <p className="text-center">Want to notified when we launch the service?</p>
+                    <div
+                      className="mx-auto subscribe-form"
+                    >
+                      <Subscribe />
+                    </div>
+                  </CardBody>
+                </Card>
                 </div>
-
+              </Container>
             </Layout>
         )
     }
 }
 
-export default HomeIndex
+export default Index;

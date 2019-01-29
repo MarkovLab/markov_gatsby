@@ -1,0 +1,110 @@
+@import "~bootstrap/scss/bootstrap"
+
+@import url('https://fonts.googleapis.com/css?family=Hammersmith+One|Open+Sans|Roboto')
+
+
+$primary-color: rgb(0, 210, 255)
+$secondary-color: rgb(109, 110, 113)
+$tertiary-color: rgb(209, 211, 212)
+
+
+$phone: 576px
+$tablet: 768px
+$desktop: 992px
+$widescreen: 1200px
+
+@keyframes fadein
+    from
+      opacity: 0
+    to
+      opacity: 1
+
+
+.main
+  background: url('../images/banner.jpg')
+  height: 100vh
+
+.brand
+  display: flex
+  align-items: center
+  -webkit-animation: fadein 2s
+  -moz-animation: fadein 2s
+  -ms-animation: fadein 2s
+  -o-animation: fadein 2s
+  animation: fadein 2s
+  &-logo
+    max-height: 36px
+    max-width: 36px
+    margin: 0 3px 0 0
+  &-text
+    display: none
+    font-size: 1.5em
+    font-family: 'Hammersmith One', sans-serif
+    color: $primary-color
+
+
+
+.contact-email
+  font-family: 'Open Sans', sans-serif
+  font-weight: lighter
+  font-size: 0.9em
+  color: $secondary-color
+
+#banner
+  display: flex
+  align-items: center
+  justify-content: center
+  margin: 2px 0
+  .mission
+    font-family: 'Roboto'
+    color: $secondary-color
+    margin-bottom: 1em
+  p
+    color: $secondary-color
+    font-weight: lighter
+    font-size: 1.2em
+    margin-bottom: 1em
+  .banner-card
+    background-color: rgba(255, 255, 255, 0.5)
+    padding: 3vh 3vh
+    min-height: 55vh
+  .banner-logo
+    display: flex
+    align-items: center
+    flex-direction: column
+    justify-content: space-between
+    -webkit-animation: fadein 2s
+    -moz-animation: fadein 2s
+    -ms-animation: fadein 2s
+    -o-animation: fadein 2s
+    animation: fadein 2s
+    &-symbol
+      max-width: 55%
+    &-text
+      font-size: 2.5em
+      font-family: 'Hammersmith One', sans-serif
+      color: $primary-color
+
+.subscribe-form
+  width: 95%
+  button
+    background-color: $primary-color
+    border: 0
+
+@media (min-width: $phone)
+  .brand
+    &-text
+      display: inline
+  #banner
+    .banner-logo
+      display: none
+    .banner-card
+      padding: 10vh 5vh
+
+@media (min-width: $tablet)
+  .subscribe-form
+    width: 85%
+
+@media (min-width: $desktop)
+  .subscribe-form
+    width: 45%

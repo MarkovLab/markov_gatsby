@@ -1,17 +1,14 @@
 import React from 'react'
-import Layout from '../components/layout'
+import { Link } from 'gatsby';
+import { Container } from 'reactstrap';
+import Layout from '../components/Layout'
 
 const NotFoundPage = () => (
   <Layout>
-    <div id="main" className="alt">
-        <section id="one">
-            <div className="inner">
-                <h1>NOT FOUND</h1>
-                <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-            </div>
-        </section>
-    </div>
+    <Container>
+      <p>Uh oh! The page you're looking for does not exist. Click <Link to="/">here</Link> to go back to home page.</p>
+    </Container>
   </Layout>
 )
 
-export default NotFoundPage
+export default NotFoundPage;
