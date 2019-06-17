@@ -216,7 +216,7 @@ class RequestDemoSection extends Component {
                       id="occupation"
                       select
                       label="Occupation"
-                      name="company"
+                      name="occupation"
                       value={occupation}
                       onChange={this.handleChange('occupation')}
                       SelectProps={{
