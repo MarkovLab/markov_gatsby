@@ -56,6 +56,7 @@ const HeaderSection = ({ classes }) => {
               variant="outlined"
               size="large"
               color="primary"
+              href="/#request-demo"
               style={{
                 width: 200,
                 borderWidth: 5,

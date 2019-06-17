@@ -17,7 +17,6 @@ const styles = theme => ({
   },
   footer: {
     color: 'white',
-    minHeight: 100,
     padding: '25px 25px 25px 25px',
     backgroundColor: 'black',
   },
@@ -31,8 +30,8 @@ const styles = theme => ({
 const Footer = ({ classes }) => (
   <div className={classes.footer}>
     <Grid container spacing={2}>
-      <Grid item md={6} sm={12}>
-        <Typography variant="body1">Copyright Markov Lab Inc. 2019</Typography>
+      <Grid item xs={12}>
+        <Typography variant="body1">&copy; 2019 Markov Lab Inc.</Typography>
       </Grid>
     </Grid>
   </div>
