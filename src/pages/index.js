@@ -1,62 +1,45 @@
-import React from 'react';
-import {
-  Container,
-  Card,
-  CardBody
-} from 'reactstrap'
-import Helmet from 'react-helmet';
+import React from 'react'
+import Helmet from 'react-helmet'
+import withStyles from '@material-ui/core/styles/withStyles'
 
-import Layout from '../components/Layout';
-import Subscribe from '../components/Subscribe';
+import { LandingLayout } from 'components/Layout'
 
-import Logo from '../assets/images/logos/ml-symbol.svg';
+import HeaderSection from 'sections/HeaderSection'
+import AboutSection from 'sections/AboutSection'
+import ProblemSection from 'sections/ProblemSection'
+import AISolutionSection from 'sections/AISolutionSection'
+import ValuePropSection from 'sections/ValuePropSection'
+import RequestDemoSection from 'sections/RequestDemoSection'
 
-class Index extends React.Component {
-    render() {
-        return (
-            <Layout>
-              <Helmet>
-                <title>Markov Lab - AI & Finance</title>
-                <meta
-                  name="description"
-                  content="Markov Lab"
-                />
-                <meta
-                  name="keywords"
-                  content="AI, finance, reinforcement learning, machine learning"
-                />
-                <meta
-                  name="author"
-                  content="Richard Kim"
-                />
-              </Helmet>
-              <Container>
-                <div id="banner">
-                <Card className="banner-card">
-                  <CardBody>
-                    <div className="banner-logo">
-                      <img
-                        src={Logo}
-                        alt="Markov Lab"
-                        className="banner-logo-symbol"
-                      />
-                      <span className="banner-logo-text">Markov Lab</span>
-                    </div>
-                    <h3 className="mission text-center">Collaborative online research platform for artificial intelligence across finance</h3>
-
-                    <p className="text-center">Want to notified when we launch the service?</p>
-                    <div
-                      className="mx-auto subscribe-form"
-                    >
-                      <Subscribe />
-                    </div>
-                  </CardBody>
-                </Card>
-                </div>
-              </Container>
-            </Layout>
-        )
-    }
+const styles = theme => {
+  return {}
 }
 
-export default Index;
+class Index extends React.Component {
+  render() {
+    return (
+      <div>
+        <Helmet>
+          <title>Markov Lab - Artficial Intelligence</title>
+          <meta name="description" content="Markov Lab Inc" />
+          <meta
+            name="keywords"
+            content="artificial intelligence, international investments, equity research, finance"
+          />
+          <meta name="author" content="Richard Kim" />
+        </Helmet>
+
+        <LandingLayout>
+          <HeaderSection />
+          <AboutSection />
+          <ProblemSection />
+          <AISolutionSection />
+          <ValuePropSection />
+          <RequestDemoSection />
+        </LandingLayout>
+      </div>
+    )
+  }
+}
+
+export default withStyles(styles)(Index)
