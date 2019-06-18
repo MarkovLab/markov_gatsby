@@ -1,18 +1,48 @@
 import React, { Component } from 'react'
+import classNames from 'classnames'
 import withStyles from '@material-ui/core/styles/withStyles'
 
 import { Typography, Grid, Button, TextField } from '@material-ui/core'
 
+import bg from 'assets/images/background/bg1.jpg'
+
 const styles = theme => {
   return {
     section: {
-      minHeight: 350,
+      height: '90vh',
       display: 'flex',
-      padding: '25px 0',
+      padding: '55px 0',
       position: 'relative',
     },
     requestForm: {
       maxWidth: 800,
+      padding: 25,
+      backgroundColor: 'rgba(40,40,40,0.9)',
+      color: 'inherit',
+    },
+    AISolution: {
+      zIndex: 2,
+      minHeight: 350,
+      backgroundImage: `url(${bg})`,
+      backgroundPosition: 'center',
+      backgroundSize: 'cover',
+    },
+    shaded: {
+      '&:after': {
+        background: 'rgb(0, 0, 0)',
+        opacity: 0.4,
+        position: 'absolute',
+        zIndex: -1,
+        width: '100%',
+        height: '100%',
+        display: 'block',
+        left: '0',
+        top: '0',
+        content: "''",
+      },
+    },
+    white: {
+      color: 'white',
     },
   }
 }
@@ -24,26 +54,11 @@ const encode = data => {
 }
 
 const occupations = [
-  {
-    value: 'portfolio-manager',
-    label: 'Portfolio Manager',
-  },
-  {
-    value: 'trader',
-    label: 'Trader',
-  },
-  {
-    value: 'researcher',
-    label: 'Researcher',
-  },
-  {
-    value: 'analyst',
-    label: 'Analyst',
-  },
-  {
-    value: 'other',
-    label: 'Other',
-  },
+  'Portfolio Manager',
+  'Trader',
+  'Researcher',
+  'Analyst',
+  'Other',
 ]
 
 const defaultState = {
@@ -83,12 +98,12 @@ class RequestDemoSection extends Component {
     })
   }
 
-  handleSubmit = event => {
+  handleSubmit = async event => {
     event.preventDefault()
 
     const items = ['firstName', 'lastName', 'email', 'companyName']
 
-    items.map(item => {
+    await items.map(item => {
       if (this.state[item] === '') {
         this.setState(prevState => ({
           errors: {
@@ -99,8 +114,8 @@ class RequestDemoSection extends Component {
       }
     })
 
-    const errorItems = items.filter(item => this.state.errors[item])
-    if (errorItems.length === 0) {
+    const errorValues = Object.values(this.state.errors)
+    if (errorValues.every(v => !v)) {
       const { firstName, lastName, email, companyName, occupation } = this.state
       fetch('/', {
         method: 'POST',
@@ -129,12 +144,20 @@ class RequestDemoSection extends Component {
       errors,
       success,
     } = this.state
-    const { classes } = this.props
+    const { classes, ...rest } = this.props
     return (
-      <section className={classes.section} id="request-demo">
+      <section
+        className={classNames(
+          classes.section,
+          classes.AISolution,
+          classes.shaded,
+          classes.white
+        )}
+        {...rest}
+      >
         <Grid container spacing={2} justify="center">
           <Grid item xs={11} md={5}>
-            <Typography variant="h6">Request Demo</Typography>
+            <Typography variant="h3">Request Demo</Typography>
           </Grid>
           <Grid item xs={11} sm={9} md={6}>
             {success ? (
@@ -144,7 +167,7 @@ class RequestDemoSection extends Component {
             ) : (
               <form
                 noValidate
-                className={classes.requestForm}
+                className={classNames(classes.requestForm, classes.white)}
                 onSubmit={this.handleSubmit}
                 name="request-demo"
                 data-netlify="true"
@@ -161,9 +184,13 @@ class RequestDemoSection extends Component {
                       onChange={this.handleChange('firstName')}
                       margin="normal"
                       fullWidth
-                      required
                       error={errors.firstName}
                       helperText={errors.firstName && 'First Name is required'}
+                      InputLabelProps={{
+                        style: {
+                          color: 'inherit',
+                        },
+                      }}
                     />
                   </Grid>
                   <Grid item xs={12} md={6}>
@@ -175,9 +202,13 @@ class RequestDemoSection extends Component {
                       onChange={this.handleChange('lastName')}
                       margin="normal"
                       fullWidth
-                      required
                       error={errors.lastName}
                       helperText={errors.lastName && 'Last Name is required'}
+                      InputLabelProps={{
+                        style: {
+                          color: 'inherit',
+                        },
+                      }}
                     />
                   </Grid>
                   <Grid item xs={12}>
@@ -190,9 +221,13 @@ class RequestDemoSection extends Component {
                       onChange={this.handleChange('email')}
                       margin="normal"
                       fullWidth
-                      required
                       error={errors.email}
                       helperText={errors.email && 'Email is required'}
+                      InputLabelProps={{
+                        style: {
+                          color: 'inherit',
+                        },
+                      }}
                     />
                   </Grid>
                   <Grid item xs={12}>
@@ -204,11 +239,15 @@ class RequestDemoSection extends Component {
                       onChange={this.handleChange('companyName')}
                       margin="normal"
                       fullWidth
-                      required
                       error={errors.companyName}
                       helperText={
                         errors.companyName && 'Company Name is required'
                       }
+                      InputLabelProps={{
+                        style: {
+                          color: 'inherit',
+                        },
+                      }}
                     />
                   </Grid>
                   <Grid item xs={12} md={8}>
@@ -224,11 +263,16 @@ class RequestDemoSection extends Component {
                       }}
                       margin="normal"
                       fullWidth
+                      InputLabelProps={{
+                        style: {
+                          color: 'inherit',
+                        },
+                      }}
                     >
                       <option key="Default" value="" disabled />
                       {occupations.map(option => (
-                        <option key={option.value} value={option.value}>
-                          {option.label}
+                        <option key={option} value={option}>
+                          {option}
                         </option>
                       ))}
                     </TextField>

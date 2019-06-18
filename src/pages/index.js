@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Helmet from 'react-helmet'
 import withStyles from '@material-ui/core/styles/withStyles'
 
@@ -11,11 +11,59 @@ import AISolutionSection from 'sections/AISolutionSection'
 import ValuePropSection from 'sections/ValuePropSection'
 import RequestDemoSection from 'sections/RequestDemoSection'
 
-const styles = theme => {
-  return {}
-}
+import Context from 'context'
 
-class Index extends React.Component {
+class Index extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      section: 'header',
+      setSection: this.setSection,
+      yCoordinates: {
+        header: 0,
+        about: 0,
+        problem: 0,
+        solution: 0,
+        value: 0,
+        demo: 0,
+      },
+    }
+  }
+
+  componentDidMount() {
+    const sections = [
+      'header',
+      'about',
+      'challenges',
+      'solution',
+      'value',
+      'demo',
+    ]
+    sections.map(section => {
+      const dom = document.getElementById(section)
+      this.setState(prevState => ({
+        ...prevState,
+        yCoordinates: {
+          ...prevState.yCoordinates,
+          [section]: dom.offsetTop,
+        },
+      }))
+    })
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
+  setSection = section => {
+    this.setState({ section })
+
+    const navBar = document.getElementById('navbar')
+
+    window.scrollTo({
+      top: this.state.yCoordinates[section] - navBar.offsetHeight,
+      behavior: 'smooth',
+    })
+  }
+
   render() {
     return (
       <div>
@@ -29,17 +77,19 @@ class Index extends React.Component {
           <meta name="author" content="Richard Kim" />
         </Helmet>
 
-        <LandingLayout>
-          <HeaderSection />
-          <AboutSection />
-          <ProblemSection />
-          <AISolutionSection />
-          <ValuePropSection />
-          <RequestDemoSection />
-        </LandingLayout>
+        <Context.Provider value={this.state}>
+          <LandingLayout>
+            <HeaderSection id="header" />
+            <AboutSection id="about" />
+            <ProblemSection id="challenges" />
+            <AISolutionSection id="solution" />
+            <ValuePropSection id="value" />
+            <RequestDemoSection id="demo" />
+          </LandingLayout>
+        </Context.Provider>
       </div>
     )
   }
 }
 
-export default withStyles(styles)(Index)
+export default Index

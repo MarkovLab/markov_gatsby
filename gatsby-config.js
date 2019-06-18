@@ -8,6 +8,13 @@ module.exports = {
       'Markov Lab: Combining collective intelligence and artificial intelligence in finance',
   },
   plugins: [
+    `gatsby-plugin-material-ui`,
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/assets/typography/index.js`,
+      },
+    },
     'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-plugin-manifest`,
@@ -18,7 +25,7 @@ module.exports = {
         background_color: '#00d2ff',
         theme_color: '#00d2ff',
         display: 'minimal-ui',
-        icon: 'src/assets/images/favicons/favicon-32x32.png', // This path is relative to the root of the site.
+        icon: 'src/assets/images/favicons/ml-black-favicon.png', // This path is relative to the root of the site.
         icons: [
           {
             src: 'icons/icon-32x32.png',
@@ -41,15 +48,10 @@ module.exports = {
         assets: path.join(__dirname, 'src/assets'),
         components: path.join(__dirname, 'src/components'),
         sections: path.join(__dirname, 'src/sections'),
+        context: path.join(__dirname, 'src/context'),
       },
     },
     'gatsby-plugin-offline',
     'gatsby-plugin-netlify',
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/assets/typography`,
-      },
-    },
   ],
 }
