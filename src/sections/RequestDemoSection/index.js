@@ -4,6 +4,8 @@ import withStyles from '@material-ui/core/styles/withStyles'
 
 import { Typography, Grid, Button, TextField } from '@material-ui/core'
 
+import MLButton from 'components/MLButton'
+
 import bg from 'assets/images/background/bg1.jpg'
 
 const styles = theme => {
@@ -43,6 +45,9 @@ const styles = theme => {
     },
     white: {
       color: 'white',
+    },
+    menu: {
+      width: 200,
     },
   }
 }
@@ -162,7 +167,8 @@ class RequestDemoSection extends Component {
           <Grid item xs={11} sm={9} md={6}>
             {success ? (
               <Typography variant="body1">
-                Thank you. Our representative will contact you shortly.
+                Thank you for indicating your interest. Our representative will
+                contact you shortly.
               </Typography>
             ) : (
               <form
@@ -191,6 +197,12 @@ class RequestDemoSection extends Component {
                           color: 'inherit',
                         },
                       }}
+                      InputProps={{
+                        style: {
+                          color: 'inherit',
+                          borderBottom: '1px solid #fff',
+                        },
+                      }}
                     />
                   </Grid>
                   <Grid item xs={12} md={6}>
@@ -207,6 +219,12 @@ class RequestDemoSection extends Component {
                       InputLabelProps={{
                         style: {
                           color: 'inherit',
+                        },
+                      }}
+                      InputProps={{
+                        style: {
+                          color: 'inherit',
+                          borderBottom: '1px solid #fff',
                         },
                       }}
                     />
@@ -226,6 +244,12 @@ class RequestDemoSection extends Component {
                       InputLabelProps={{
                         style: {
                           color: 'inherit',
+                        },
+                      }}
+                      InputProps={{
+                        style: {
+                          color: 'inherit',
+                          borderBottom: '1px solid #fff',
                         },
                       }}
                     />
@@ -248,6 +272,12 @@ class RequestDemoSection extends Component {
                           color: 'inherit',
                         },
                       }}
+                      InputProps={{
+                        style: {
+                          color: 'inherit',
+                          borderBottom: '1px solid #fff',
+                        },
+                      }}
                     />
                   </Grid>
                   <Grid item xs={12} md={8}>
@@ -258,14 +288,26 @@ class RequestDemoSection extends Component {
                       name="occupation"
                       value={occupation}
                       onChange={this.handleChange('occupation')}
-                      SelectProps={{
-                        native: true,
-                      }}
                       margin="normal"
                       fullWidth
                       InputLabelProps={{
                         style: {
                           color: 'inherit',
+                        },
+                      }}
+                      InputProps={{
+                        style: {
+                          color: 'inherit',
+                        },
+                      }}
+                      SelectProps={{
+                        native: true,
+                        MenuProps: {
+                          className: classes.menu,
+                        },
+                        style: {
+                          color: 'inherit',
+                          borderBottom: '1px solid #fff',
                         },
                       }}
                     >
@@ -287,14 +329,14 @@ class RequestDemoSection extends Component {
                       alignItems: 'center',
                     }}
                   >
-                    <Button
+                    <MLButton
                       size="large"
                       variant="outlined"
                       fullWidth
                       type="submit"
                     >
                       Submit
-                    </Button>
+                    </MLButton>
                   </Grid>
                 </Grid>
               </form>

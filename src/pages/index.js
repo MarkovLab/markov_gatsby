@@ -32,6 +32,11 @@ class Index extends Component {
   }
 
   componentDidMount() {
+    window.addEventListener('resize', this.handleResize)
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
+  handleResize = () => {
     const sections = [
       'header',
       'about',
@@ -50,7 +55,6 @@ class Index extends Component {
         },
       }))
     })
-    window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   setSection = section => {
