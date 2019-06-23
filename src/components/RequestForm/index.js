@@ -1,4 +1,4 @@
-const React, { Component } from 'react'
+import React, { Component } from 'react'
 import classNames from 'classNames'
 import withStyles from '@material-ui/core/styles/withStyles'
 
@@ -19,27 +19,6 @@ const styles = theme => {
       padding: 25,
       backgroundColor: 'rgba(40,40,40,0.9)',
       color: 'inherit',
-    },
-    AISolution: {
-      zIndex: 2,
-      minHeight: 350,
-      backgroundImage: `url(${bg})`,
-      backgroundPosition: 'center',
-      backgroundSize: 'cover',
-    },
-    shaded: {
-      '&:after': {
-        background: 'rgb(0, 0, 0)',
-        opacity: 0.4,
-        position: 'absolute',
-        zIndex: -1,
-        width: '100%',
-        height: '100%',
-        display: 'block',
-        left: '0',
-        top: '0',
-        content: "''",
-      },
     },
     white: {
       color: 'white',
@@ -81,7 +60,7 @@ const defaultState = {
 
 class RequestForm extends Component {
   constructor(props) {
-    super(props);
+    super(props)
 
     this.state = defaultState
   }
@@ -138,6 +117,194 @@ class RequestForm extends Component {
   }
 
   render() {
-
+    const {
+      firstName,
+      lastName,
+      email,
+      companyName,
+      occupation,
+      errors,
+      success,
+    } = this.state
+    const { classes, ...rest } = this.props
+    return (
+      <div className={classNames(classes.requestForm, classes.white)}>
+        {success ? (
+          <Typography variant="body1" align="center">
+            Thank you for indicating your interest. Our representative will
+            contact you shortly.
+          </Typography>
+        ) : (
+          <form
+            noValidate
+            onSubmit={this.handleSubmit}
+            name="request-demo"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+          >
+            <input type="hidden" name="form-name" value="request-demo" />
+            <Grid container spacing={1} justify="center">
+              <Grid item xs={12} md={6}>
+                <TextField
+                  id="first-name"
+                  label="First Name"
+                  name="firstName"
+                  value={firstName}
+                  onChange={this.handleChange('firstName')}
+                  margin="normal"
+                  fullWidth
+                  error={errors.firstName}
+                  helperText={errors.firstName && 'First Name is required'}
+                  InputLabelProps={{
+                    style: {
+                      color: 'inherit',
+                    },
+                  }}
+                  InputProps={{
+                    style: {
+                      color: 'inherit',
+                      borderBottom: '1px solid #fff',
+                    },
+                  }}
+                />
+              </Grid>
+              <Grid item xs={12} md={6}>
+                <TextField
+                  id="last-name"
+                  label="Last Name"
+                  name="lastName"
+                  value={lastName}
+                  onChange={this.handleChange('lastName')}
+                  margin="normal"
+                  fullWidth
+                  error={errors.lastName}
+                  helperText={errors.lastName && 'Last Name is required'}
+                  InputLabelProps={{
+                    style: {
+                      color: 'inherit',
+                    },
+                  }}
+                  InputProps={{
+                    style: {
+                      color: 'inherit',
+                      borderBottom: '1px solid #fff',
+                    },
+                  }}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  id="email"
+                  label="Email"
+                  name="email"
+                  type="email"
+                  value={email}
+                  onChange={this.handleChange('email')}
+                  margin="normal"
+                  fullWidth
+                  error={errors.email}
+                  helperText={errors.email && 'Email is required'}
+                  InputLabelProps={{
+                    style: {
+                      color: 'inherit',
+                    },
+                  }}
+                  InputProps={{
+                    style: {
+                      color: 'inherit',
+                      borderBottom: '1px solid #fff',
+                    },
+                  }}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  id="company"
+                  label="Company Name"
+                  name="companyName"
+                  value={companyName}
+                  onChange={this.handleChange('companyName')}
+                  margin="normal"
+                  fullWidth
+                  error={errors.companyName}
+                  helperText={errors.companyName && 'Company Name is required'}
+                  InputLabelProps={{
+                    style: {
+                      color: 'inherit',
+                    },
+                  }}
+                  InputProps={{
+                    style: {
+                      color: 'inherit',
+                      borderBottom: '1px solid #fff',
+                    },
+                  }}
+                />
+              </Grid>
+              <Grid item xs={12} md={8}>
+                <TextField
+                  id="occupation"
+                  select
+                  label="Occupation"
+                  name="occupation"
+                  value={occupation}
+                  onChange={this.handleChange('occupation')}
+                  margin="normal"
+                  fullWidth
+                  InputLabelProps={{
+                    style: {
+                      color: 'inherit',
+                    },
+                  }}
+                  InputProps={{
+                    style: {
+                      color: 'inherit',
+                    },
+                  }}
+                  SelectProps={{
+                    native: true,
+                    MenuProps: {
+                      className: classes.menu,
+                    },
+                    style: {
+                      color: 'inherit',
+                      borderBottom: '1px solid #fff',
+                    },
+                  }}
+                >
+                  <option key="Default" value="" disabled />
+                  {occupations.map(option => (
+                    <option key={option} value={option}>
+                      {option}
+                    </option>
+                  ))}
+                </TextField>
+              </Grid>
+              <Grid
+                item
+                xs={12}
+                md={4}
+                style={{
+                  display: 'flex',
+                  justifyContent: 'flex-end',
+                  alignItems: 'center',
+                }}
+              >
+                <MLButton
+                  size="large"
+                  variant="outlined"
+                  fullWidth
+                  type="submit"
+                >
+                  Submit
+                </MLButton>
+              </Grid>
+            </Grid>
+          </form>
+        )}
+      </div>
+    )
   }
 }
+
+export default withStyles(styles)(RequestForm)

@@ -1,9 +1,8 @@
 import React from 'react'
 import { Link as RouterLink } from 'gatsby'
-import { compose } from 'recompose'
 
 import { withStyles } from '@material-ui/core/styles'
-import { AppBar, Toolbar, IconButton, Link, Hidden } from '@material-ui/core'
+import { AppBar, Toolbar, Link, Hidden } from '@material-ui/core'
 
 import Logo from 'assets/images/logos/ml-logo.svg'
 
@@ -38,10 +37,6 @@ const styles = theme => ({
 })
 
 class Navbar extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-
   render() {
     const { classes } = this.props
 

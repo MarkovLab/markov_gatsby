@@ -1,29 +1,28 @@
 import React from 'react'
-
 import withStyles from '@material-ui/core/styles/withStyles'
 
-import { Typography, Grid } from '@material-ui/core'
+import { Typography } from '@material-ui/core'
 
-const styles = theme => {
-  return {
-    section: {
-      height: '90vh',
-      display: 'flex',
-      padding: '25px 0',
-      position: 'relative',
-    },
-  }
-}
+import Section from 'components/Section'
+
+const styles = theme => ({
+  missionBox: {
+    width: '80%',
+    margin: 20,
+  },
+})
 
 const AboutSection = ({ classes, ...rest }) => {
   return (
-    <section className={classes.section} {...rest}>
-      <Grid container spacing={2} justify="center">
-        <Grid item xs={11}>
-          <Typography variant="h3">About Section</Typography>
-        </Grid>
-      </Grid>
-    </section>
+    <Section title="Mission" {...rest} shaded>
+      <div className={classes.missionBox}>
+        <Typography variant="h5" align="center">
+          We expand investment opportunities in global equities markets for
+          institutional investors by enabling analysis of companies that are
+          considered 'out of reach' in traditional fundamental analysis.
+        </Typography>
+      </div>
+    </Section>
   )
 }
 

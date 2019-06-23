@@ -31,9 +31,9 @@ class DesktopMenu extends Component {
             <Button
               color="inherit"
               className={classes.menuLink}
-              onClick={() => setSection('about')}
+              onClick={() => setSection('mission')}
             >
-              About
+              Mission
             </Button>
             <Button
               color="inherit"
@@ -49,14 +49,13 @@ class DesktopMenu extends Component {
             >
               AI Solution
             </Button>
-            <Button
+            <MLButton
               color="inherit"
-              className={classes.menuLink}
-              onClick={() => setSection('value')}
+              onClick={() => setSection('demo')}
+              style={{
+                marginLeft: 10,
+              }}
             >
-              Value
-            </Button>
-            <MLButton color="inherit" onClick={() => setSection('demo')}>
               Request Demo
             </MLButton>
           </>

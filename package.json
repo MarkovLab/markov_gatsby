@@ -8,6 +8,7 @@
     "@material-ui/icons": "^4.2.0",
     "@material-ui/styles": "^4.1.1",
     "classnames": "^2.2.6",
+    "fg-loadcss": "^2.1.0",
     "gatsby": "^2.0.76",
     "gatsby-plugin-manifest": "^2.0.9",
     "gatsby-plugin-material-ui": "^2.0.1",

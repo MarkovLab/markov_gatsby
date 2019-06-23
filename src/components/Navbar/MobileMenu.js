@@ -14,8 +14,12 @@ import Context from 'context'
 
 const styles = theme => {
   return {
+    iconButton: {
+      marginRight: 10,
+    },
     list: {
-      width: 250,
+      width: 300,
+      paddingTop: 25,
     },
     listItemText: {
       primaryTypographyProps: {
@@ -55,11 +59,22 @@ class MobileMenu extends Component {
   render() {
     const { open } = this.state
     const { classes } = this.props
+
+    const primaryTypographyProps = {
+      style: {
+        fontFamily: 'Hammersmith One',
+      },
+    }
+
     return (
       <Context.Consumer>
         {({ section, setSection }) => (
           <>
-            <IconButton color="secondary" onClick={this.toggleDrawer}>
+            <IconButton
+              color="secondary"
+              onClick={this.toggleDrawer}
+              className={classes.iconButton}
+            >
               <MenuIcon />
             </IconButton>
             <SwipeableDrawer
@@ -73,36 +88,35 @@ class MobileMenu extends Component {
                   <ListItemText
                     primary="Home"
                     onClick={this.handleClick('header', setSection)}
+                    primaryTypographyProps={primaryTypographyProps}
                   />
                 </ListItem>
                 <ListItem>
                   <ListItemText
-                    primary="About"
-                    onClick={this.handleClick('about', setSection)}
+                    primary="Mission"
+                    onClick={this.handleClick('mission', setSection)}
+                    primaryTypographyProps={primaryTypographyProps}
                   />
                 </ListItem>
                 <ListItem>
                   <ListItemText
                     primary="Challenges"
                     onClick={this.handleClick('challenges', setSection)}
+                    primaryTypographyProps={primaryTypographyProps}
                   />
                 </ListItem>
                 <ListItem>
                   <ListItemText
                     primary="AI Solution"
                     onClick={this.handleClick('solution', setSection)}
-                  />
-                </ListItem>
-                <ListItem>
-                  <ListItemText
-                    primary="Value"
-                    onClick={this.handleClick('value', setSection)}
+                    primaryTypographyProps={primaryTypographyProps}
                   />
                 </ListItem>
                 <ListItem>
                   <ListItemText
                     primary="Request Demo"
                     onClick={this.handleClick('demo', setSection)}
+                    primaryTypographyProps={primaryTypographyProps}
                   />
                 </ListItem>
               </List>

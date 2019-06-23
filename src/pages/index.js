@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Helmet from 'react-helmet'
-import withStyles from '@material-ui/core/styles/withStyles'
 
 import { LandingLayout } from 'components/Layout'
 
@@ -8,7 +7,6 @@ import HeaderSection from 'sections/HeaderSection'
 import AboutSection from 'sections/AboutSection'
 import ProblemSection from 'sections/ProblemSection'
 import AISolutionSection from 'sections/AISolutionSection'
-import ValuePropSection from 'sections/ValuePropSection'
 import RequestDemoSection from 'sections/RequestDemoSection'
 
 import Context from 'context'
@@ -32,19 +30,13 @@ class Index extends Component {
   }
 
   componentDidMount() {
+    this.handleResize()
     window.addEventListener('resize', this.handleResize)
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   handleResize = () => {
-    const sections = [
-      'header',
-      'about',
-      'challenges',
-      'solution',
-      'value',
-      'demo',
-    ]
+    const sections = ['header', 'mission', 'challenges', 'solution', 'demo']
     sections.map(section => {
       const dom = document.getElementById(section)
       this.setState(prevState => ({
@@ -84,10 +76,9 @@ class Index extends Component {
         <Context.Provider value={this.state}>
           <LandingLayout>
             <HeaderSection id="header" />
-            <AboutSection id="about" />
+            <AboutSection id="mission" />
             <ProblemSection id="challenges" />
             <AISolutionSection id="solution" />
-            <ValuePropSection id="value" />
             <RequestDemoSection id="demo" />
           </LandingLayout>
         </Context.Provider>
