@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Grid } from '@material-ui/core'
 
 import Section from 'components/Section'
 import RequestForm from 'components/RequestForm'
 
-import bg from 'assets/images/background/bg6.jpg'
+import bg from 'assets/images/background/bg7.jpg'
 
 const RequestDemoSection = ({ ...rest }) => (
   <Section

@@ -18,7 +18,7 @@ const styles = theme => {
       marginRight: 10,
     },
     list: {
-      width: 300,
+      width: 250,
       paddingTop: 25,
     },
     listItemText: {
@@ -28,6 +28,10 @@ const styles = theme => {
     },
     drawer: {
       backgroundColor: 'gray',
+    },
+    listItemText: {
+      color: theme.palette.secondary.main,
+      fontFamily: 'Hammersmith One',
     },
   }
 }
@@ -61,9 +65,7 @@ class MobileMenu extends Component {
     const { classes } = this.props
 
     const primaryTypographyProps = {
-      style: {
-        fontFamily: 'Hammersmith One',
-      },
+      className: classes.listItemText,
     }
 
     return (
@@ -75,7 +77,7 @@ class MobileMenu extends Component {
               onClick={this.toggleDrawer}
               className={classes.iconButton}
             >
-              <MenuIcon />
+              <MenuIcon style={{ color: 'white' }} />
             </IconButton>
             <SwipeableDrawer
               anchor="left"
@@ -84,16 +86,18 @@ class MobileMenu extends Component {
               onOpen={this.toggleDrawer}
             >
               <List className={classes.list}>
-                <ListItem alignItems="center">
+                <ListItem>
                   <ListItemText
                     primary="Home"
-                    onClick={this.handleClick('header', setSection)}
+                    key="home"
+                    onClick={this.handleClick('home', setSection)}
                     primaryTypographyProps={primaryTypographyProps}
                   />
                 </ListItem>
                 <ListItem>
                   <ListItemText
                     primary="Mission"
+                    key="mission"
                     onClick={this.handleClick('mission', setSection)}
                     primaryTypographyProps={primaryTypographyProps}
                   />
@@ -101,6 +105,7 @@ class MobileMenu extends Component {
                 <ListItem>
                   <ListItemText
                     primary="Challenges"
+                    key="challenges"
                     onClick={this.handleClick('challenges', setSection)}
                     primaryTypographyProps={primaryTypographyProps}
                   />
@@ -108,6 +113,7 @@ class MobileMenu extends Component {
                 <ListItem>
                   <ListItemText
                     primary="AI Solution"
+                    key="solution"
                     onClick={this.handleClick('solution', setSection)}
                     primaryTypographyProps={primaryTypographyProps}
                   />
@@ -115,6 +121,7 @@ class MobileMenu extends Component {
                 <ListItem>
                   <ListItemText
                     primary="Request Demo"
+                    key="demo"
                     onClick={this.handleClick('demo', setSection)}
                     primaryTypographyProps={primaryTypographyProps}
                   />

@@ -10,7 +10,7 @@ class AISolutionSection extends Component {
 
     return (
       <Section
-        title="AI Enabled Financial Analysis"
+        title="AI Powered Equity Research"
         subtitle="This is subtitle"
         {...rest}
       >

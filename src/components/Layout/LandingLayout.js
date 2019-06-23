@@ -2,6 +2,7 @@ import React from 'react'
 
 import CssBaseline from '@material-ui/core/CssBaseline'
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
+import purple from '@material-ui/core/colors/purple'
 
 import Navbar from 'components/Navbar'
 import Footer from 'components/Footer'
@@ -14,10 +15,7 @@ const theme = createMuiTheme({
       contrastText: '#ffffff',
     },
     secondary: {
-      light: '#ffffff',
-      main: '#e3f2fd',
-      dark: '#b1bfca',
-      contrastText: '#000000',
+      main: purple[900],
     },
   },
   typography: {

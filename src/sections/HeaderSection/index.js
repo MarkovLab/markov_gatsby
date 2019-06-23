@@ -2,9 +2,8 @@ import React, { Component } from 'react'
 
 import withStyles from '@material-ui/core/styles/withStyles'
 
-import { Typography, Grid, Fade } from '@material-ui/core'
+import { Typography, Fade, Container } from '@material-ui/core'
 
-import Parallax from 'components/Parallax'
 import MLButton from 'components/MLButton'
 import Section from 'components/Section'
 
@@ -14,17 +13,11 @@ import Context from 'context'
 
 const styles = theme => {
   return {
-    section: {
-      height: '100vh',
+    container: {
       display: 'flex',
-      padding: '25px 0',
-      position: 'relative',
-    },
-    slogan: {
-      marginBottom: 10,
-    },
-    subSlogan: {
-      marginBottom: 10,
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
     },
   }
 }
@@ -49,41 +42,46 @@ class HeaderSection extends Component {
     const { classes, ...rest } = this.props
     return (
       <Section image={bg} {...rest} shaded fullScreen center>
-        <Fade in={fadeIn} timeout={1000}>
-          <Typography variant="h3" color="inherit" className={classes.slogan}>
-            Expanding global investment opportunities
-          </Typography>
-        </Fade>
-        <Fade in={fadeIn} timeout={2000}>
-          <Typography variant="h6" color="inherit" className={classes.slogan}>
-            Enabling analysis of previously un-investable class of equities with
-            artificial intelligence
-          </Typography>
-        </Fade>
-        <Context.Consumer>
-          {({ setSection }) => (
-            <div>
-              <Fade in={fadeIn} time={2000}>
-                <MLButton
-                  size="large"
-                  style={{ width: 200, margin: '25px 5px 25px 5px' }}
-                  onClick={() => setSection('mission')}
-                >
-                  Learn More
-                </MLButton>
+        <Container maxWidth="md" className={classes.container}>
+          <Fade in={fadeIn} timeout={2000}>
+            <Typography variant="h3" color="inherit" gutterBottom>
+              Expand your Investment Universe
+            </Typography>
+          </Fade>
+          <Fade in={fadeIn} timeout={2000}>
+            <Typography variant="h3" color="inherit" gutterBottom>
+              powered by Artificial Intelligence
+            </Typography>
+          </Fade>
+          <Fade in={fadeIn} timeout={3000}>
+            <Typography variant="h6" color="inherit" gutterBottom>
+              A new way to analyze equities in Japan and Emerging Markets
+            </Typography>
+          </Fade>
+
+          <Context.Consumer>
+            {({ setSection }) => (
+              <Fade in={fadeIn} timeout={3000}>
+                <div>
+                  <MLButton
+                    size="large"
+                    style={{ width: 200, margin: '25px 5px 25px 5px' }}
+                    onClick={() => setSection('mission')}
+                  >
+                    Learn More
+                  </MLButton>
+                  <MLButton
+                    size="large"
+                    style={{ width: 200, margin: '25px 5px 25px 5px' }}
+                    onClick={() => setSection('demo')}
+                  >
+                    Request Demo
+                  </MLButton>
+                </div>
               </Fade>
-              <Fade in={fadeIn} time={2000}>
-                <MLButton
-                  size="large"
-                  style={{ width: 200, margin: '25px 5px 25px 5px' }}
-                  onClick={() => setSection('demo')}
-                >
-                  Request Demo
-                </MLButton>
-              </Fade>
-            </div>
-          )}
-        </Context.Consumer>
+            )}
+          </Context.Consumer>
+        </Container>
       </Section>
     )
   }

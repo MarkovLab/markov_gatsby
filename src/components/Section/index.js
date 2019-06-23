@@ -44,8 +44,7 @@ const styles = theme => ({
   },
   subtitle: {
     fontSize: '1.3rem',
-    fontWeight: 500,
-    fontStyle: 'oblique',
+    fontWeight: 'bold',
   },
   center: {
     justifyContent: 'center',
@@ -83,7 +82,11 @@ const Section = ({
               <Typography variant="h3" gutterBottom>
                 {title}
               </Typography>
-              <Typography variant="body1" className={classes.subtitle}>
+              <Typography
+                variant="body1"
+                className={classes.subtitle}
+                color={shaded ? 'inherit' : 'secondary'}
+              >
                 {subtitle}
               </Typography>
               <MLDivider dark={shaded ? false : true} />

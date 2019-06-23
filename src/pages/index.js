@@ -37,7 +37,7 @@ class Index extends Component {
 
   handleResize = () => {
     const sections = ['header', 'mission', 'challenges', 'solution', 'demo']
-    sections.map(section => {
+    sections.forEach(section => {
       const dom = document.getElementById(section)
       this.setState(prevState => ({
         ...prevState,

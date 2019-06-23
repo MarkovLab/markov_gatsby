@@ -2,20 +2,14 @@ import React, { Component } from 'react'
 import clsx from 'clsx'
 import withStyles from '@material-ui/core/styles/withStyles'
 
-import { Typography, Grid, Button, TextField } from '@material-ui/core'
+import { Typography, Grid, TextField } from '@material-ui/core'
 
 import MLButton from 'components/MLButton'
 
 const styles = theme => {
   return {
-    section: {
-      height: '90vh',
-      display: 'flex',
-      padding: '55px 0',
-      position: 'relative',
-    },
     requestForm: {
-      maxWidth: 800,
+      maxWidth: 1000,
       padding: 25,
       backgroundColor: 'rgba(40,40,40,0.9)',
       color: 'inherit',
@@ -43,12 +37,32 @@ const occupations = [
   'Other',
 ]
 
+const employerSizes = [
+  '1 - 2',
+  '3 - 10',
+  '11 - 50',
+  '51 - 250',
+  '251 - 1000',
+  '> 1000',
+]
+
+const aumSizes = [
+  '< $100 million',
+  '$100 million < $500 million',
+  '$500 million < $2 billion',
+  '$2 billion < $50 billion',
+  '> $50 billion',
+  'Not Applicable',
+]
+
 const defaultState = {
   firstName: '',
   lastName: '',
   email: '',
   companyName: '',
   occupation: '',
+  employerSize: '',
+  aumSize: '',
   success: false,
   errors: {
     firstName: false,
@@ -85,7 +99,7 @@ class RequestForm extends Component {
 
     const items = ['firstName', 'lastName', 'email', 'companyName']
 
-    await items.map(item => {
+    await items.forEach(item => {
       if (this.state[item] === '') {
         this.setState(prevState => ({
           errors: {
@@ -98,7 +112,15 @@ class RequestForm extends Component {
 
     const errorValues = Object.values(this.state.errors)
     if (errorValues.every(v => !v)) {
-      const { firstName, lastName, email, companyName, occupation } = this.state
+      const {
+        firstName,
+        lastName,
+        email,
+        companyName,
+        occupation,
+        employerSize,
+        aumSize,
+      } = this.state
       fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -109,6 +131,8 @@ class RequestForm extends Component {
           email,
           companyName,
           occupation,
+          employerSize,
+          aumSize,
         }),
       }).then(() => {
         this.setState({ ...defaultState, success: true })
@@ -125,8 +149,10 @@ class RequestForm extends Component {
       occupation,
       errors,
       success,
+      employerSize,
+      aumSize,
     } = this.state
-    const { classes, ...rest } = this.props
+    const { classes } = this.props
     return (
       <div className={clsx(classes.requestForm, classes.white)}>
         {success ? (
@@ -241,7 +267,7 @@ class RequestForm extends Component {
                   }}
                 />
               </Grid>
-              <Grid item xs={12} md={8}>
+              <Grid item xs={12}>
                 <TextField
                   id="occupation"
                   select
@@ -274,6 +300,84 @@ class RequestForm extends Component {
                 >
                   <option key="Default" value="" disabled />
                   {occupations.map(option => (
+                    <option key={option} value={option}>
+                      {option}
+                    </option>
+                  ))}
+                </TextField>
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  id="employerSize"
+                  select
+                  label="Employer Size"
+                  name="employerSize"
+                  value={employerSize}
+                  onChange={this.handleChange('employerSize')}
+                  margin="normal"
+                  fullWidth
+                  InputLabelProps={{
+                    style: {
+                      color: 'inherit',
+                    },
+                  }}
+                  InputProps={{
+                    style: {
+                      color: 'inherit',
+                    },
+                  }}
+                  SelectProps={{
+                    native: true,
+                    MenuProps: {
+                      className: classes.menu,
+                    },
+                    style: {
+                      color: 'inherit',
+                      borderBottom: '1px solid #fff',
+                    },
+                  }}
+                >
+                  <option key="Default" value="" disabled />
+                  {employerSizes.map(option => (
+                    <option key={option} value={option}>
+                      {option}
+                    </option>
+                  ))}
+                </TextField>
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  id="aumSize"
+                  select
+                  label="AUM of Firm"
+                  name="aumSize"
+                  value={aumSize}
+                  onChange={this.handleChange('aumSize')}
+                  margin="normal"
+                  fullWidth
+                  InputLabelProps={{
+                    style: {
+                      color: 'inherit',
+                    },
+                  }}
+                  InputProps={{
+                    style: {
+                      color: 'inherit',
+                    },
+                  }}
+                  SelectProps={{
+                    native: true,
+                    MenuProps: {
+                      className: classes.menu,
+                    },
+                    style: {
+                      color: 'inherit',
+                      borderBottom: '1px solid #fff',
+                    },
+                  }}
+                >
+                  <option key="Default" value="" disabled />
+                  {aumSizes.map(option => (
                     <option key={option} value={option}>
                       {option}
                     </option>
