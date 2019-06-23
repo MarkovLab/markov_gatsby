@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import classNames from 'classNames'
+import clsx from 'clsx'
 import withStyles from '@material-ui/core/styles/withStyles'
 
 import { Typography, Grid, Button, TextField } from '@material-ui/core'
@@ -128,7 +128,7 @@ class RequestForm extends Component {
     } = this.state
     const { classes, ...rest } = this.props
     return (
-      <div className={classNames(classes.requestForm, classes.white)}>
+      <div className={clsx(classes.requestForm, classes.white)}>
         {success ? (
           <Typography variant="body1" align="center">
             Thank you for indicating your interest. Our representative will

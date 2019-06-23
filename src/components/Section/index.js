@@ -11,6 +11,7 @@ const styles = theme => ({
     display: 'flex',
     padding: '45px 0',
     position: 'relative',
+    backgroundColor: 'white',
   },
   shaded: {
     color: 'white',
