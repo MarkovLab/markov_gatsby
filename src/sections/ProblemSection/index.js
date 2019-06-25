@@ -84,7 +84,7 @@ const ProblemSection = ({ classes, ...rest }) => {
             <Typography variant="body1">
               In over 3,700 publicly listed companies in Japan, less than 20% of
               them publish financial results and management guidance in English.
-              For small to mid-cap companies, this ratio is even lower. Without
+              For small and mid cap companies, this ratio is even lower. Without
               fluency in Japanese, overseas investors cannot directly comprehend
               the results of those companies and must rely on large sell side
               firms with expertise in Japan.
@@ -105,8 +105,8 @@ const ProblemSection = ({ classes, ...rest }) => {
               approximately 1,4000 companies are tracked by only a single sell
               side analyst. Furthermore, sell side reports in English are even
               rarer. As a result, overseas investors cannot include these
-              companies in their investment universe even if they are new alpha
-              opportunities.
+              companies in their investment universe even if they are an
+              interesting alpha generating opportunity.
             </Typography>
           </Grid>
           <Grid
@@ -146,8 +146,8 @@ const ProblemSection = ({ classes, ...rest }) => {
               Markets in Financial Instruments Directive II (MiFID II), a recent
               European regulation, is reshaping the way equity research is
               distributed and consumed in Europe and in other markets. This
-              regulation is expected create downward pressure in the number of
-              companies covered by existing sell side firms. Japan and
+              regulation is anticipated to cause a downward pressure on the
+              number of companies covered by existing sell side firms. Japan and
               Asia-Pacific markets will not be insulated from the impact of
               MiFID II, which will lead to increased sparcity of coverage in
               these markets by existing sell side firms going forward.

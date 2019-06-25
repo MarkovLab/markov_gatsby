@@ -49,7 +49,7 @@ class BenefitsBlock extends Component {
                 Andrey - AI Analyst
               </Typography>
               <Typography variant="body2">
-                Meet the world's first AI Analyst, Andrey. Andrey is built with
+                Meet the world's first AI analyst, Andrey. Andrey is built with
                 the latest artificial intelligence technology developed by
                 researchers from MIT and Harvard.
               </Typography>
@@ -67,8 +67,8 @@ class BenefitsBlock extends Component {
               </Typography>
               <Typography variant="body2">
                 Andrey crawls and monitors the web 24 hours a day, 7 days a week
-                for the latest quarterly / annual results from the companies and
-                relevant news articles.
+                to detect the latest quarterly / annual results from companies
+                and relevant news articles.
               </Typography>
             </div>
           </Grid>
@@ -81,8 +81,8 @@ class BenefitsBlock extends Component {
               <Typography variant="body2">
                 Andrey processes the new financial results using natural
                 language processing (NLP) techniques and identifies key segments
-                of the reports to summarize and translate using machine
-                translation.
+                of the reports to summarize and translate in seconds using
+                machine translation.
               </Typography>
             </div>
           </Grid>
@@ -129,8 +129,8 @@ class BenefitsBlock extends Component {
                 Summary Report
               </Typography>
               <Typography variant="body2">
-                Based on the latest financial results, management discussions,
-                and a historical financial database, Andrey produces customized
+                Based on the latest results, management discussions, and a
+                historical financial database, Andrey produces customized
                 summary reports in English (or other preferred language) for
                 companies that you track.
               </Typography>
