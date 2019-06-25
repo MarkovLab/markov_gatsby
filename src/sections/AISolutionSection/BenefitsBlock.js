@@ -57,6 +57,9 @@ const styles = theme => {
     imgRounded: {
       borderRadius: '6px !important',
     },
+    paddingRight: {
+      paddingRight: 25,
+    },
   }
 }
 
@@ -73,7 +76,12 @@ class DescriptionBlock extends Component {
     return (
       <div className={classes.block}>
         <Grid container spacing={3} justify="center">
-          <Grid item sm={6} xs={12}>
+          <Grid item xs={12}>
+            <Typography variant="h4" gutterBottom align="center">
+              Why Andrey?
+            </Typography>
+          </Grid>
+          <Grid item sm={6} xs={12} className={classes.paddingRight}>
             <img
               src={image}
               alt="Deep Learning"
@@ -81,8 +89,8 @@ class DescriptionBlock extends Component {
             />
           </Grid>
           <Grid item sm={6} xs={12}>
-            <div className={classes.benefit}>
-              <div className={classes.iconSection}>
+            <Grid container spacing={3}>
+              <Grid item xs={2} className={classes.iconSection}>
                 <Icon
                   className={clsx(
                     classes.indigo,
@@ -90,37 +98,32 @@ class DescriptionBlock extends Component {
                     'fas fa-th fa-2x'
                   )}
                 />
-              </div>
-              <div>
-                <Typography variant="h6">Comprehensive Coverage</Typography>
+              </Grid>
+              <Grid item xs={10}>
+                <Typography variant="h6">Coverage</Typography>
                 <Typography variant="body1">
-                  Unprecedented, Comprehensive coverage of over 3,700 publicaly
-                  traded stocks listed in the Tokyo Stock Exchange
+                  Unprecedented, comprehensive coverage of over 3,700 publicly
+                  listed companies in Japan (additional markets coming soon!)
                 </Typography>
-              </div>
-            </div>
-            <div className={classes.benefit}>
-              <div className={classes.iconSection}>
+              </Grid>
+              <Grid item xs={2} className={classes.iconSection}>
                 <Icon
                   className={clsx(
                     classes.deepOrange,
                     classes.icon,
-                    'far fa-clock fa-2x'
+                    'fas fa-clock fa-2x'
                   )}
                 />
-              </div>
-              <div>
-                <Typography variant="h6">
-                  Rapid and timely coverage of
-                </Typography>
+              </Grid>
+              <Grid item xs={10}>
+                <Typography variant="h6">Speed</Typography>
                 <Typography variant="body1">
-                  Unprecedented, Comprehensive coverage of over 3,700 publicaly
-                  traded stocks listed in the Tokyo Stock Exchange
+                  In comparison to professional translators, who may take a
+                  whole day to translate a page of report, Andrey processes and
+                  translates them at a breakneck speed of 2 - 3 seconds.
                 </Typography>
-              </div>
-            </div>
-            <div className={classes.benefit}>
-              <div className={classes.iconSection}>
+              </Grid>
+              <Grid item xs={2} className={classes.iconSection}>
                 <Icon
                   className={clsx(
                     classes.green,
@@ -128,15 +131,15 @@ class DescriptionBlock extends Component {
                     'fas fa-money-bill fa-2x'
                   )}
                 />
-              </div>
-              <div>
-                <Typography variant="h6">Cost at the fraction</Typography>
+              </Grid>
+              <Grid item xs={10}>
+                <Typography variant="h6">Cost</Typography>
                 <Typography variant="body1">
-                  Unprecedented, Comprehensive coverage of over 3,700 publicaly
-                  traded stocks listed in the Tokyo Stock Exchange
+                  Andrey provides these benefits at a fraction of the cost of
+                  the sell side analysts reports.
                 </Typography>
-              </div>
-            </div>
+              </Grid>
+            </Grid>
           </Grid>
         </Grid>
       </div>

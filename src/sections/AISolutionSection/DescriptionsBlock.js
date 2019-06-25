@@ -63,10 +63,12 @@ class BenefitsBlock extends Component {
                 className={classes.cardImage}
               />
               <Typography variant="h6" color="secondary">
-                Monitor Financial Results
+                24 Hour Monitoring
               </Typography>
               <Typography variant="body2">
-                Andrey monitors the results of companies and provides alerts as
+                Andrey crawls and monitors the web 24 hours a day, 7 days a week
+                for the latest quarterly / annual results from the companies and
+                relevant news articles.
               </Typography>
             </div>
           </Grid>
@@ -74,10 +76,13 @@ class BenefitsBlock extends Component {
             <div className={classes.card}>
               <img src={nlp} alt="Reading" className={classes.cardImage} />
               <Typography variant="h6" color="secondary">
-                Idenfy Key Sections
+                Identify Key Sections
               </Typography>
               <Typography variant="body2">
-                Andrey identifies the Natural Language Processing
+                Andrey processes the new financial results using natural
+                language processing (NLP) techniques and identifies key segments
+                of the reports to summarize and translate using machine
+                translation.
               </Typography>
             </div>
           </Grid>
@@ -89,10 +94,13 @@ class BenefitsBlock extends Component {
                 className={classes.cardImage}
               />
               <Typography variant="h6" color="secondary">
-                Powered by Deep Learning
+                Powered by Deep Learning and Bayesian Learning
               </Typography>
               <Typography variant="body2">
-                We leverage the latest methodologies in artificial intelligence
+                Andrey is powered by the latest, cutting-edge AI technologies –
+                Deep Learning models and Bayesian inference techniques, which
+                are inspired by biological processes of neural networks and
+                human cognition.
               </Typography>
             </div>
           </Grid>
@@ -107,10 +115,10 @@ class BenefitsBlock extends Component {
                 Projects & Valuations
               </Typography>
               <Typography variant="body2">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                hendrerit tortor nec diam gravida ornare. Sed finibus, eros sit
-                amet aliquet ultricies, nulla orci elementum est, id mollis nunc
-                quam nec libero.
+                Based on the historical financial results of the company as well
+                as its industry peers, Andrey makes financial projections
+                including revenue, earnings, and cash flow. Based on these
+                projections, Andrey builds customizable DCF valuation models.
               </Typography>
             </div>
           </Grid>
@@ -121,10 +129,10 @@ class BenefitsBlock extends Component {
                 Summary Report
               </Typography>
               <Typography variant="body2">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                hendrerit tortor nec diam gravida ornare. Sed finibus, eros sit
-                amet aliquet ultricies, nulla orci elementum est, id mollis nunc
-                quam nec libero.
+                Based on the latest financial results, management discussions,
+                and a historical financial database, Andrey produces customized
+                summary reports in English (or other preferred language) for
+                companies that you track.
               </Typography>
             </div>
           </Grid>

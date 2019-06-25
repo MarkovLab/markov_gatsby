@@ -30,9 +30,18 @@ class Index extends Component {
   }
 
   componentDidMount() {
-    this.handleResize()
     window.addEventListener('resize', this.handleResize)
     window.scrollTo({ top: 0, behavior: 'smooth' })
+    setTimeout(
+      function() {
+        this.handleResize()
+      }.bind(this),
+      1000
+    )
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleResize)
   }
 
   handleResize = () => {

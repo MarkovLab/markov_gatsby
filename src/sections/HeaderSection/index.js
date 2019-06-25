@@ -19,6 +19,11 @@ const styles = theme => {
       justifyContent: 'center',
       alignItems: 'center',
     },
+    header: {
+      [theme.breakpoints.only('xs')]: {
+        paddingTop: 100,
+      },
+    },
   }
 }
 
@@ -41,28 +46,50 @@ class HeaderSection extends Component {
     const { fadeIn } = this.state
     const { classes, ...rest } = this.props
     return (
-      <Section image={bg} {...rest} shaded fullScreen center>
+      <Section
+        image={bg}
+        {...rest}
+        shaded
+        fullScreen
+        center
+        classNames={classes.header}
+      >
         <Container maxWidth="md" className={classes.container}>
           <Fade in={fadeIn} timeout={2000}>
-            <Typography variant="h3" color="inherit" gutterBottom>
+            <Typography
+              variant="h3"
+              color="inherit"
+              gutterBottom
+              align="center"
+            >
               Expand your Investment Universe
             </Typography>
           </Fade>
           <Fade in={fadeIn} timeout={2000}>
-            <Typography variant="h3" color="inherit" gutterBottom>
+            <Typography
+              variant="h4"
+              color="inherit"
+              gutterBottom
+              align="center"
+            >
               powered by Artificial Intelligence
             </Typography>
           </Fade>
           <Fade in={fadeIn} timeout={3000}>
-            <Typography variant="h6" color="inherit" gutterBottom>
+            <Typography
+              variant="h6"
+              color="inherit"
+              gutterBottom
+              align="center"
+            >
               A new way to analyze equities in Japan and Emerging Markets
             </Typography>
           </Fade>
 
           <Context.Consumer>
             {({ setSection }) => (
-              <Fade in={fadeIn} timeout={3000}>
-                <div>
+              <>
+                <Fade in={fadeIn} timeout={3000}>
                   <MLButton
                     size="large"
                     style={{ width: 200, margin: '25px 5px 25px 5px' }}
@@ -70,6 +97,8 @@ class HeaderSection extends Component {
                   >
                     Learn More
                   </MLButton>
+                </Fade>
+                <Fade in={fadeIn} timeout={3000}>
                   <MLButton
                     size="large"
                     style={{ width: 200, margin: '25px 5px 25px 5px' }}
@@ -77,8 +106,8 @@ class HeaderSection extends Component {
                   >
                     Request Demo
                   </MLButton>
-                </div>
-              </Fade>
+                </Fade>
+              </>
             )}
           </Context.Consumer>
         </Container>

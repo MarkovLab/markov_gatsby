@@ -17,8 +17,8 @@ const styles = theme => {
     white: {
       color: 'white',
     },
-    menu: {
-      width: 200,
+    select: {
+      borderBottom: '1px solid #fff',
     },
   }
 }
@@ -292,6 +292,9 @@ class RequestForm extends Component {
                     MenuProps: {
                       className: classes.menu,
                     },
+                    classes: {
+                      icon: classes.white,
+                    },
                     style: {
                       color: 'inherit',
                       borderBottom: '1px solid #fff',
@@ -331,6 +334,9 @@ class RequestForm extends Component {
                     MenuProps: {
                       className: classes.menu,
                     },
+                    classes: {
+                      icon: classes.white,
+                    },
                     style: {
                       color: 'inherit',
                       borderBottom: '1px solid #fff',
@@ -369,6 +375,9 @@ class RequestForm extends Component {
                     native: true,
                     MenuProps: {
                       className: classes.menu,
+                    },
+                    classes: {
+                      icon: classes.white,
                     },
                     style: {
                       color: 'inherit',

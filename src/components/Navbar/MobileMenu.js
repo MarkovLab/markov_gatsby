@@ -86,7 +86,7 @@ class MobileMenu extends Component {
               onOpen={this.toggleDrawer}
             >
               <List className={classes.list}>
-                <ListItem>
+                <ListItem button>
                   <ListItemText
                     primary="Home"
                     key="home"
@@ -94,7 +94,7 @@ class MobileMenu extends Component {
                     primaryTypographyProps={primaryTypographyProps}
                   />
                 </ListItem>
-                <ListItem>
+                <ListItem button>
                   <ListItemText
                     primary="Mission"
                     key="mission"
@@ -102,7 +102,7 @@ class MobileMenu extends Component {
                     primaryTypographyProps={primaryTypographyProps}
                   />
                 </ListItem>
-                <ListItem>
+                <ListItem button>
                   <ListItemText
                     primary="Challenges"
                     key="challenges"
@@ -110,7 +110,7 @@ class MobileMenu extends Component {
                     primaryTypographyProps={primaryTypographyProps}
                   />
                 </ListItem>
-                <ListItem>
+                <ListItem button>
                   <ListItemText
                     primary="AI Solution"
                     key="solution"
@@ -118,7 +118,7 @@ class MobileMenu extends Component {
                     primaryTypographyProps={primaryTypographyProps}
                   />
                 </ListItem>
-                <ListItem>
+                <ListItem button>
                   <ListItemText
                     primary="Request Demo"
                     key="demo"

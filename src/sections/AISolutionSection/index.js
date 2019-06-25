@@ -10,8 +10,8 @@ class AISolutionSection extends Component {
 
     return (
       <Section
-        title="AI Powered Equity Research"
-        subtitle="This is subtitle"
+        title="A New Paradigm"
+        subtitle="Reimagine international equity research with the power of artificial intelligence"
         {...rest}
       >
         <DescriptionBlock />

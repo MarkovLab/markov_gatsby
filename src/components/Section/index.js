@@ -18,7 +18,7 @@ const styles = theme => ({
     backgroundColor: 'rgba(10, 10, 10, 0.9)',
   },
   fullScreen: {
-    height: '100vh',
+    minHeight: '100vh',
   },
   image: {
     zIndex: 2,
@@ -53,6 +53,7 @@ const styles = theme => ({
 
 const Section = ({
   classes,
+  classNames,
   children,
   shaded,
   title,
@@ -62,11 +63,15 @@ const Section = ({
   center,
   ...rest
 }) => {
-  const sectionClass = clsx(classes.section, {
-    [classes.shaded]: shaded,
-    [classes.image]: image ? true : false,
-    [classes.fullScreen]: fullScreen,
-  })
+  const sectionClass = clsx(
+    classes.section,
+    {
+      [classes.shaded]: shaded,
+      [classes.image]: image ? true : false,
+      [classes.fullScreen]: fullScreen,
+    },
+    classNames
+  )
   const containerClass = clsx(classes.container, {
     [classes.center]: center,
   })
