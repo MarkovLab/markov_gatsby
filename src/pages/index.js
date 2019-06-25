@@ -73,7 +73,7 @@ class Index extends Component {
     return (
       <div>
         <Helmet>
-          <title>Markov Lab - Artficial Intelligence</title>
+          <title>Markov Lab - A new way to invest internationally</title>
           <meta name="description" content="Markov Lab Inc" />
           <meta
             name="keywords"

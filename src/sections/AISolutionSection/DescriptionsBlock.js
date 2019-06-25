@@ -79,7 +79,7 @@ class BenefitsBlock extends Component {
                 Identify Key Sections
               </Typography>
               <Typography variant="body2">
-                Andrey processes the new financial results using natural
+                Andrey reads processes the new financial results using natural
                 language processing (NLP) techniques and identifies key segments
                 of the reports to summarize and translate in seconds using
                 machine translation.

@@ -12,7 +12,7 @@ const RequestDemoSection = ({ ...rest }) => (
     shaded
     {...rest}
     title="Request a Demo"
-    subtitle="Interested in trying out Andrey? Request a demo account by signing up below"
+    subtitle="Interested in trying out Andrey? Request a demo account by signing up below."
   >
     <Grid container spacing={2} justify="center">
       <Grid item xs={11} sm={9} md={7}>

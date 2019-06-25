@@ -136,7 +136,7 @@ class DescriptionBlock extends Component {
                 <Typography variant="h6">Cost</Typography>
                 <Typography variant="body1">
                   Andrey provides these benefits at a fraction of the cost of
-                  the sell side analysts reports.
+                  subscribing to a sell side analyst.
                 </Typography>
               </Grid>
             </Grid>
