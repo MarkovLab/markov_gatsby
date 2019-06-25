@@ -118,9 +118,9 @@ class DescriptionBlock extends Component {
               <Grid item xs={10}>
                 <Typography variant="h6">Speed</Typography>
                 <Typography variant="body1">
-                  In comparison to professional translators, who may take a
-                  whole day to translate a page of report, Andrey processes and
-                  translates them at a breakneck speed of 2 - 3 seconds.
+                  In contrast to human analysts and translators, Andrey
+                  processes and translates company results at a breakneck speed
+                  of 2 - 3 seconds.
                 </Typography>
               </Grid>
               <Grid item xs={2} className={classes.iconSection}>
