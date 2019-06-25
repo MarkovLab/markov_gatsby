@@ -90,7 +90,7 @@ class HeaderSection extends Component {
               gutterBottom
               align="center"
             >
-              A new way to analyze equities in Japan and Emerging Markets
+              A new way to invest in Japan and Emerging Markets
             </Typography>
           </Fade>
 
