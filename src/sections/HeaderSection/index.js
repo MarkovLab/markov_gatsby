@@ -80,7 +80,7 @@ class HeaderSection extends Component {
               gutterBottom
               align="center"
             >
-              powered by Andrey, AI Analyst
+              powered by Andrey, the AI Analyst
             </Typography>
           </Fade>
           <Fade in={fadeIn} timeout={3000}>
