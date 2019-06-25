@@ -157,7 +157,7 @@ const ProblemSection = ({ classes, ...rest }) => {
       </Section>
       <Testimonial
         statement={
-          "Small-cap Japanese companies are 'out of reach' for wider investment community in the West.  This opens up many opportunities for investors who can properly access this segment of the market."
+          "Most small-cap Japanese companies are 'out of reach' for the wider investment community.  This opens up many opportunities for investors who can properly access this segment of the market."
         }
         source={'Daniel Brandt, Mitsubishi UFJ Securities Americas'}
         image={bg}
