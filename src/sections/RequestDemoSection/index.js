@@ -11,8 +11,8 @@ const RequestDemoSection = ({ ...rest }) => (
     image={bg}
     shaded
     {...rest}
-    title="Interested in trying out   Andrey?"
-    subtitle="Request a demo account by signing up below"
+    title="Request a Demo"
+    subtitle="Interested in trying out Andrey? Request a demo account by signing up below"
   >
     <Grid container spacing={2} justify="center">
       <Grid item xs={11} sm={9} md={7}>

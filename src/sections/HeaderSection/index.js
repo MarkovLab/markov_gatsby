@@ -24,6 +24,14 @@ const styles = theme => {
         paddingTop: 100,
       },
     },
+    buttons: {
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      [theme.breakpoints.only('xs')]: {
+        flexDirection: 'column',
+      },
+    },
   }
 }
 
@@ -88,7 +96,7 @@ class HeaderSection extends Component {
 
           <Context.Consumer>
             {({ setSection }) => (
-              <>
+              <div className={classes.buttons}>
                 <Fade in={fadeIn} timeout={3000}>
                   <MLButton
                     size="large"
@@ -107,7 +115,7 @@ class HeaderSection extends Component {
                     Request Demo
                   </MLButton>
                 </Fade>
-              </>
+              </div>
             )}
           </Context.Consumer>
         </Container>
