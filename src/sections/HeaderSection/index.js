@@ -70,7 +70,7 @@ class HeaderSection extends Component {
               gutterBottom
               align="center"
             >
-              Expand your Investment Universe
+              Expand Your Investment Universe
             </Typography>
           </Fade>
           <Fade in={fadeIn} timeout={2000}>
@@ -80,7 +80,7 @@ class HeaderSection extends Component {
               gutterBottom
               align="center"
             >
-              powered by Andrey, the AI Analyst
+              Powered by Andrey, the AI Analyst
             </Typography>
           </Fade>
           <Fade in={fadeIn} timeout={3000}>

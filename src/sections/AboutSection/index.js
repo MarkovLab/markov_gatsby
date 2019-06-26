@@ -19,7 +19,7 @@ const AboutSection = ({ classes, ...rest }) => {
         <Typography variant="h5" align="center">
           We expand investment opportunities in global equities markets for
           institutional investors by enabling analysis of companies that are
-          considered 'out of reach' using traditional fundamental analysis.
+          considered "out of reach" using traditional fundamental analysis.
         </Typography>
       </div>
     </Section>

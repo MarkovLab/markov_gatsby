@@ -56,7 +56,7 @@ const ProblemSection = ({ classes, ...rest }) => {
     <>
       <Section
         title="Challenges"
-        subtitle="Hurdles in international investing for today's institutional investors"
+        subtitle="Barriers faced by today’s international institutional investors"
         {...rest}
       >
         <Grid container justify="center" spacing={3}>
@@ -79,15 +79,15 @@ const ProblemSection = ({ classes, ...rest }) => {
             className={clsx(classes.center, classes.item2)}
           >
             <Typography variant="h5" color="secondary" gutterBottom>
-              Language Barrier
+              The Language Barrier
             </Typography>
             <Typography variant="body1">
               In over 3,700 publicly listed companies in Japan, less than 20% of
               them publish financial results and management guidance in English.
-              For small and mid cap companies, this ratio is even lower. Without
-              fluency in Japanese, overseas investors cannot directly comprehend
-              the results of those companies and must rely on large sell side
-              firms with expertise in Japan.
+              For small and mid-cap companies, this ratio is even lower. Without
+              fluency in Japanese, overseas investors cannot directly understand
+              the performance of these companies and must rely on large
+              sell-side firms with expertise in Japan.
             </Typography>
           </Grid>
           <Grid
@@ -97,16 +97,16 @@ const ProblemSection = ({ classes, ...rest }) => {
             className={clsx(classes.center, classes.item3)}
           >
             <Typography variant="h5" color="secondary" gutterBottom>
-              Sparse Sell-side Coverage
+              Sparse Sell-Side Coverage
             </Typography>
             <Typography variant="body1">
               Of over 3,700 publicly listed companies in Japan, approximately
               600 companies are not followed by any sell side firm, and
-              approximately 1,4000 companies are tracked by only a single sell
+              approximately 1,400 companies are tracked by only a single sell
               side analyst. Furthermore, sell side reports in English are even
               rarer. As a result, overseas investors cannot include these
               companies in their investment universe even if they are an
-              interesting alpha generating opportunity.
+              interesting alpha-generating opportunity.
             </Typography>
           </Grid>
           <Grid
@@ -149,8 +149,8 @@ const ProblemSection = ({ classes, ...rest }) => {
               regulation is anticipated to cause a downward pressure on the
               number of companies covered by existing sell side firms. Japan and
               Asia-Pacific markets will not be insulated from the impact of
-              MiFID II, which will lead to increased sparcity of coverage in
-              these markets by existing sell side firms going forward.
+              MiFID II, which will further reduce coverage of these markets by
+              existing sell-side firms going forward.
             </Typography>
           </Grid>
         </Grid>

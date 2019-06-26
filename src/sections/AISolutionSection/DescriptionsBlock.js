@@ -131,7 +131,7 @@ class BenefitsBlock extends Component {
               <Typography variant="body2">
                 Based on the latest results, management discussions, and a
                 historical financial database, Andrey produces customized
-                summary reports in English (or other preferred language) for
+                summary reports in English (or another preferred language) for
                 companies that you track.
               </Typography>
             </div>
