@@ -1,6 +1,7 @@
 ---
 title: 'Privacy Policy'
 date: '2019-06-27'
+templateKey: 'policy-page'
 ---
 
 # INTRODUCTION

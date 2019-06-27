@@ -4,7 +4,6 @@ import { loadCSS } from 'fg-loadcss'
 import withStyles from '@material-ui/core/styles/withStyles'
 
 import { Typography, Grid, Icon } from '@material-ui/core'
-import { green, indigo, deepOrange } from '@material-ui/core/colors'
 
 import image from 'assets/images/background/bg9.jpg'
 
