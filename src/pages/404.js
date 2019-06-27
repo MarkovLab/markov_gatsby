@@ -5,15 +5,7 @@ import { Link } from 'gatsby'
 import { Typography } from '@material-ui/core'
 import { LandingLayout } from 'components/Layout'
 
-const styles = theme => ({
-  container: {
-    display: 'flex',
-    height: '100vh',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-})
+import ErrorPageStyles from 'assets/jss/pages/ErrorPageStyles'
 
 const NotFoundPage = ({ classes }) => (
   <LandingLayout>
@@ -26,4 +18,4 @@ const NotFoundPage = ({ classes }) => (
   </LandingLayout>
 )
 
-export default withStyles(styles)(NotFoundPage)
+export default withStyles(ErrorPageStyles)(NotFoundPage)

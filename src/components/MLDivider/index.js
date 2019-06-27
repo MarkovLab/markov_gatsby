@@ -4,19 +4,7 @@ import withStyles from '@material-ui/core/styles/withStyles'
 
 import MLIcon from 'components/MLIcon'
 
-const styles = theme => ({
-  divider: {
-    display: 'flex',
-    width: '90%',
-    margin: '20px 0 20px 0',
-  },
-  line: {
-    width: '100%',
-    position: 'relative',
-    margin: 15,
-    borderBottom: '2px solid #757575',
-  },
-})
+import MLDividerStyles from 'assets/jss/components/MLDividerStyles'
 
 const MLDivider = ({ classes, dark }) => {
   const lineStyle = {
@@ -31,4 +19,4 @@ const MLDivider = ({ classes, dark }) => {
   )
 }
 
-export default withStyles(styles)(MLDivider)
+export default withStyles(MLDividerStyles)(MLDivider)

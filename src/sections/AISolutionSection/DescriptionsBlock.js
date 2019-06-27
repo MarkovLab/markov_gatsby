@@ -10,30 +10,7 @@ import machinelearning from 'assets/images/icons/machinelearning.png'
 import crawl from 'assets/images/icons/crawl.png'
 import andrey from 'assets/images/icons/andrey.png'
 
-const styles = theme => {
-  return {
-    block: {
-      margin: '0px 15px 35px 15px',
-      display: 'block',
-    },
-    card: {
-      padding: 35,
-      [theme.breakpoints.down('sm')]: {
-        padding: 20,
-      },
-    },
-    cardImage: {
-      padding: 35,
-      margin: 0,
-      [theme.breakpoints.down('md')]: {
-        padding: 25,
-      },
-      [theme.breakpoints.down('sm')]: {
-        padding: 15,
-      },
-    },
-  }
-}
+import BenefitsBlockStyles from 'assets/jss/sections/BenefitsBlockStyles'
 
 class BenefitsBlock extends Component {
   render() {
@@ -142,4 +119,4 @@ class BenefitsBlock extends Component {
   }
 }
 
-export default withStyles(styles)(BenefitsBlock)
+export default withStyles(BenefitsBlockStyles)(BenefitsBlock)

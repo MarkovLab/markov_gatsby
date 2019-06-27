@@ -7,12 +7,7 @@ import Context from 'context'
 
 import MLButton from 'components/MLButton'
 
-const styles = theme => ({
-  menuLink: {
-    textTransform: 'capitalize',
-    fontFamily: theme.typography.title.fontFamily,
-  },
-})
+import DesktopMenuStyles from 'assets/jss/components/DesktopMenuStyles'
 
 class DesktopMenu extends Component {
   render() {
@@ -65,4 +60,4 @@ class DesktopMenu extends Component {
   }
 }
 
-export default withStyles(styles)(DesktopMenu)
+export default withStyles(DesktopMenuStyles)(DesktopMenu)

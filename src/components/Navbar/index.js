@@ -9,37 +9,11 @@ import Logo from 'assets/images/logos/ml-logo.svg'
 import DesktopMenu from './DesktopMenu'
 import MobileMenu from './MobileMenu'
 
-const styles = theme => ({
-  appBar: {
-    zIndex: theme.zIndex.drawer + 1,
-  },
-  grow: {
-    flexGrow: 1,
-  },
-  flexRow: {
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  leftContainer: {
-    display: 'flex',
-    alignItems: 'center',
-  },
-  logoLink: {
-    display: 'flex',
-    alignSelf: 'center',
-  },
-  logo: {
-    width: 170,
-    alignSelf: 'center',
-    margin: 0,
-  },
-})
+import NavbarStyles from 'assets/jss/components/NavbarStyles'
 
 class Navbar extends React.Component {
   render() {
     const { classes } = this.props
-
     return (
       <AppBar
         position="fixed"
@@ -67,4 +41,4 @@ class Navbar extends React.Component {
   }
 }
 
-export default withStyles(styles)(Navbar)
+export default withStyles(NavbarStyles)(Navbar)

@@ -5,15 +5,7 @@ import { Typography } from '@material-ui/core'
 
 import Section from 'components/Section'
 
-const styles = theme => ({
-  testimonial: {
-    fontStyle: 'oblique',
-  },
-  testimonialBox: {
-    width: '80%',
-    margin: 20,
-  },
-})
+import TestimonialStyles from 'assets/jss/components/TestimonialStyles'
 
 const Testimonial = ({ classes, statement, source, image }) => {
   return (
@@ -28,4 +20,4 @@ const Testimonial = ({ classes, statement, source, image }) => {
   )
 }
 
-export default withStyles(styles)(Testimonial)
+export default withStyles(TestimonialStyles)(Testimonial)

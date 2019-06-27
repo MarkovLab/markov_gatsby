@@ -10,30 +10,7 @@ import Section from 'components/Section'
 import bg from 'assets/images/background/bg4.jpg'
 
 import Context from 'context'
-
-const styles = theme => {
-  return {
-    container: {
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center',
-    },
-    header: {
-      [theme.breakpoints.only('xs')]: {
-        paddingTop: 100,
-      },
-    },
-    buttons: {
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      [theme.breakpoints.only('xs')]: {
-        flexDirection: 'column',
-      },
-    },
-  }
-}
+import HeaderSectionStyles from 'assets/jss/sections/HeaderSectionStyles'
 
 class HeaderSection extends Component {
   constructor(props) {
@@ -124,4 +101,4 @@ class HeaderSection extends Component {
   }
 }
 
-export default withStyles(styles)(HeaderSection)
+export default withStyles(HeaderSectionStyles)(HeaderSection)

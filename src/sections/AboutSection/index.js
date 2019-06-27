@@ -5,12 +5,7 @@ import { Typography } from '@material-ui/core'
 
 import Section from 'components/Section'
 
-const styles = theme => ({
-  missionBox: {
-    width: '80%',
-    margin: 20,
-  },
-})
+import AboutSectionStyles from 'assets/jss/sections/AboutSectionStyles'
 
 const AboutSection = ({ classes, ...rest }) => {
   return (
@@ -26,4 +21,4 @@ const AboutSection = ({ classes, ...rest }) => {
   )
 }
 
-export default withStyles(styles)(AboutSection)
+export default withStyles(AboutSectionStyles)(AboutSection)

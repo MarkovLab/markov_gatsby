@@ -2,25 +2,12 @@ import React from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import { Container, Typography, Link } from '@material-ui/core'
 
-const styles = theme => ({
-  root: {
-    flexGrow: 1,
-  },
-  footer: {
-    color: 'white',
-    padding: '25px 25px 25px 25px',
-    backgroundColor: theme.palette.primary.main,
-  },
-  contact: {
-    display: 'flex',
-    justifyContent: 'space-between',
-  },
-})
+import footerStyles from 'assets/jss/components/FooterStyles'
 
 const Footer = ({ classes }) => (
   <div className={classes.footer}>
     <Container className={classes.contact}>
-      <Typography variant="body1">
+      <Typography variant="body1" color="inherit">
         &copy; 2019 Markov Lab Inc. All rights reserved.
       </Typography>
       <Link href="mailto:info@markovlab.ai" variant="body1" color="inherit">
@@ -30,4 +17,4 @@ const Footer = ({ classes }) => (
   </div>
 )
 
-export default withStyles(styles)(Footer)
+export default withStyles(footerStyles)(Footer)

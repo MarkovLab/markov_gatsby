@@ -8,60 +8,7 @@ import { green, indigo, deepOrange } from '@material-ui/core/colors'
 
 import image from 'assets/images/background/bg9.jpg'
 
-const styles = theme => {
-  return {
-    block: {
-      margin: '35px 15px',
-      display: 'block',
-      width: '70%',
-      [theme.breakpoints.down('sm')]: {
-        width: '100%',
-      },
-    },
-    card: {
-      padding: 35,
-    },
-    cardImage: {
-      padding: 25,
-      margin: 0,
-    },
-    benefit: {
-      display: 'flex',
-      marginTop: 15,
-      marginBottom: 15,
-    },
-    iconSection: {
-      width: theme.spacing(12),
-      display: 'flex',
-      alignItems: 'center',
-      [theme.breakpoints.down('sm')]: {
-        width: theme.spacing(18),
-      },
-    },
-    icon: {
-      width: '100%',
-    },
-    green: {
-      color: green[900],
-    },
-    indigo: {
-      color: indigo[800],
-    },
-    deepOrange: {
-      color: deepOrange[900],
-    },
-    imgRaised: {
-      boxShadow:
-        '0 5px 15px -8px rgba(0, 0, 0, 0.24), 0 8px 10px -5px rgba(0, 0, 0, 0.2)',
-    },
-    imgRounded: {
-      borderRadius: '6px !important',
-    },
-    paddingRight: {
-      paddingRight: 25,
-    },
-  }
-}
+import BenefitsBlockStyles from 'assets/jss/sections/BenefitsBlockStyles'
 
 class DescriptionBlock extends Component {
   componentDidMount() {
@@ -93,7 +40,7 @@ class DescriptionBlock extends Component {
               <Grid item xs={2} className={classes.iconSection}>
                 <Icon
                   className={clsx(
-                    classes.indigo,
+                    classes.indigoText,
                     classes.icon,
                     'fas fa-th fa-2x'
                   )}
@@ -109,7 +56,7 @@ class DescriptionBlock extends Component {
               <Grid item xs={2} className={classes.iconSection}>
                 <Icon
                   className={clsx(
-                    classes.deepOrange,
+                    classes.deepOrangeText,
                     classes.icon,
                     'fas fa-clock fa-2x'
                   )}
@@ -126,7 +73,7 @@ class DescriptionBlock extends Component {
               <Grid item xs={2} className={classes.iconSection}>
                 <Icon
                   className={clsx(
-                    classes.green,
+                    classes.greenText,
                     classes.icon,
                     'fas fa-money-bill fa-2x'
                   )}
@@ -147,4 +94,4 @@ class DescriptionBlock extends Component {
   }
 }
 
-export default withStyles(styles)(DescriptionBlock)
+export default withStyles(BenefitsBlockStyles)(DescriptionBlock)

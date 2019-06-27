@@ -12,44 +12,7 @@ import tse from 'assets/images/stock/tse.jpg'
 import europe from 'assets/images/stock/europe.jpg'
 import bg from 'assets/images/background/bg5.jpg'
 
-const styles = theme => ({
-  imgRaised: {
-    boxShadow:
-      '0 5px 15px -8px rgba(0, 0, 0, 0.24), 0 8px 10px -5px rgba(0, 0, 0, 0.2)',
-  },
-  imgRounded: {
-    borderRadius: '6px !important',
-  },
-  center: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-  },
-  item1: {
-    order: 1,
-  },
-  item2: {
-    order: 2,
-  },
-  item3: {
-    order: 3,
-    [theme.breakpoints.down('sm')]: {
-      order: 4,
-    },
-  },
-  item4: {
-    order: 4,
-    [theme.breakpoints.down('sm')]: {
-      order: 3,
-    },
-  },
-  item5: {
-    order: 5,
-  },
-  item6: {
-    order: 6,
-  },
-})
+import ProblemSectionStyles from 'assets/jss/sections/ProblemSectionStyles'
 
 const ProblemSection = ({ classes, ...rest }) => {
   return (
@@ -166,4 +129,4 @@ const ProblemSection = ({ classes, ...rest }) => {
   )
 }
 
-export default withStyles(styles)(ProblemSection)
+export default withStyles(ProblemSectionStyles)(ProblemSection)
