@@ -41,6 +41,13 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `src`,
+        path: `${__dirname}/src/`,
+      },
+    },
+    {
       resolve: 'gatsby-plugin-root-import',
       options: {
         src: path.join(__dirname, 'src'),
@@ -51,6 +58,7 @@ module.exports = {
         context: path.join(__dirname, 'src/context'),
       },
     },
+    `gatsby-transformer-remark`,
     'gatsby-plugin-offline',
     'gatsby-plugin-netlify',
   ],
