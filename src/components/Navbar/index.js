@@ -2,9 +2,17 @@ import React from 'react'
 import { Link as RouterLink } from 'gatsby'
 
 import { withStyles } from '@material-ui/core/styles'
-import { AppBar, Toolbar, Link, Hidden } from '@material-ui/core'
+import {
+  AppBar,
+  Toolbar,
+  Link,
+  Hidden,
+  Typography,
+  useScrollTrigger,
+  Slide,
+} from '@material-ui/core'
 
-import Logo from 'assets/images/logos/ml-logo.svg'
+import MLLogo from 'components/MLLogo'
 
 import DesktopMenu from './DesktopMenu'
 import MobileMenu from './MobileMenu'
@@ -18,14 +26,14 @@ class Navbar extends React.Component {
       <AppBar
         position="fixed"
         className={classes.appBar}
-        color="primary"
         id="navbar"
+        color="primary"
       >
         <Toolbar>
           <div className={classes.grow}>
             <div className={classes.leftContainer}>
               <Link to="/" component={RouterLink} className={classes.logoLink}>
-                <img src={Logo} className={classes.logo} alt="Markov Lab" />
+                <MLLogo />
               </Link>
             </div>
           </div>

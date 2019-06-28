@@ -4,6 +4,7 @@ import { Typography, Grid } from '@material-ui/core'
 import withStyles from '@material-ui/core/styles/withStyles'
 
 import { LandingLayout as Layout } from 'components/Layout'
+import Section from 'components/Section'
 
 const TeamPageStyles = theme => ({
   content: {
@@ -15,9 +16,7 @@ const TeamPageStyles = theme => ({
 const TeamPage = ({ classes }) => {
   return (
     <Layout>
-      <div className={classes.content}>
-        <Typography variant="h1">Leadership Team</Typography>
-      </div>
+      <Section fullScreen title="Leadership Team"></Section>
     </Layout>
   )
 }

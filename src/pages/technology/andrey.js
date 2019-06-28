@@ -1,9 +1,12 @@
 import React from 'react'
 
-import { Typography, Grid } from '@material-ui/core'
+import { Typography } from '@material-ui/core'
 import withStyles from '@material-ui/core/styles/withStyles'
 
 import { LandingLayout as Layout } from 'components/Layout'
+import Section from 'components/Section'
+
+import bg from 'assets/images/background/bg8.jpg'
 
 const AndreyPageStyles = theme => ({
   content: {
@@ -15,9 +18,17 @@ const AndreyPageStyles = theme => ({
 const AndreyPage = ({ classes }) => {
   return (
     <Layout>
-      <div className={classes.content}>
+      <Section
+        image={bg}
+        shaded
+        center
+        fullScreen
+        title="Andrey"
+        subtitle="World's First AI Analyst"
+      ></Section>
+      <Section>
         <Typography variant="h1">Andrey</Typography>
-      </div>
+      </Section>
     </Layout>
   )
 }

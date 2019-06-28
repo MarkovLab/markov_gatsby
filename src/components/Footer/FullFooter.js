@@ -54,12 +54,12 @@ const FullFooter = ({ classes }) => {
           </Grid>
           <Grid item sm={3} xs={12}>
             <Typography variant="h6" className={classes.linkHeader}>
-              Solutions
+              Technology
             </Typography>
             <Typography variant="body1" className={classes.link}>
               <Link
                 component={RouterLink}
-                to="/solutions/andrey"
+                to="/technology/andrey"
                 color="inherit"
               >
                 Andrey
@@ -86,12 +86,12 @@ const FullFooter = ({ classes }) => {
               Follow
             </Typography>
             <Typography variant="body1" className={classes.link}>
-              <Link component={RouterLink} to="#" color="inherit">
+              <Link component={RouterLink} to="/#" color="inherit">
                 <Icon className="fab fa-linkedin-in" />
               </Link>
             </Typography>
             <Typography variant="body1" className={classes.link}>
-              <Link component={RouterLink} to="#" color="inherit">
+              <Link component={RouterLink} to="/#" color="inherit">
                 <Icon className="fab fa-twitter" />
               </Link>
             </Typography>

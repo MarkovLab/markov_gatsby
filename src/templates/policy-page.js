@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import { Typography, Container } from '@material-ui/core'
+import { makeStyles } from '@material-ui/styles'
 import withStyles from '@material-ui/core/styles/withStyles'
 
 import Content, { HTMLContent } from 'components/Content'
@@ -14,23 +15,22 @@ const PolicyPageStyles = theme => ({
   },
 })
 
-const PolicyPageTemplateStyles = theme => ({
+const PolicyPageTemplateStyles = makeStyles({
   bodyText: {
     marginTop: 25,
     marginBottom: 25,
   },
 })
 
-let PolicyPageTemplate = ({
+const PolicyPageTemplate = ({
   title,
   date,
   content,
   contentComponent,
-  classes,
   ...rest
 }) => {
   const PageContent = contentComponent || Content
-
+  const classes = PolicyPageTemplateStyles()
   return (
     <Container {...rest}>
       <Typography variant="h4" gutterBottom>
@@ -43,7 +43,6 @@ let PolicyPageTemplate = ({
     </Container>
   )
 }
-PolicyPageTemplate = withStyles(PolicyPageTemplateStyles)(PolicyPageTemplate)
 
 export { PolicyPageTemplate }
 
