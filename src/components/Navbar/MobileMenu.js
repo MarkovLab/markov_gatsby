@@ -12,29 +12,7 @@ import MenuIcon from '@material-ui/icons/Menu'
 
 import Context from 'context'
 
-const styles = theme => {
-  return {
-    iconButton: {
-      marginRight: 10,
-    },
-    list: {
-      width: 250,
-      paddingTop: 25,
-    },
-    listItemText: {
-      primaryTypographyProps: {
-        fontFamily: theme.typography.title.fontFamily,
-      },
-    },
-    drawer: {
-      backgroundColor: 'gray',
-    },
-    listItemText: {
-      color: theme.palette.secondary.main,
-      fontFamily: 'Hammersmith One',
-    },
-  }
-}
+import MobileMenuStyles from 'assets/jss/components/MobileMenuStyles'
 
 class MobileMenu extends Component {
   constructor(props) {
@@ -135,4 +113,4 @@ class MobileMenu extends Component {
   }
 }
 
-export default withStyles(styles)(MobileMenu)
+export default withStyles(MobileMenuStyles)(MobileMenu)

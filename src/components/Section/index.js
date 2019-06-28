@@ -6,50 +6,7 @@ import { Typography, Grid } from '@material-ui/core'
 
 import MLDivider from 'components/MLDivider'
 
-const styles = theme => ({
-  section: {
-    display: 'flex',
-    padding: '45px 0',
-    position: 'relative',
-    backgroundColor: 'white',
-  },
-  shaded: {
-    color: 'white',
-    backgroundColor: 'rgba(10, 10, 10, 0.9)',
-  },
-  fullScreen: {
-    minHeight: '100vh',
-  },
-  image: {
-    zIndex: 2,
-    backgroundPosition: 'center',
-    backgroundSize: 'cover',
-    '&:after': {
-      background: 'rgb(0, 0, 0)',
-      opacity: 0.5,
-      position: 'absolute',
-      zIndex: -1,
-      width: '100%',
-      height: '100%',
-      display: 'block',
-      left: '0',
-      top: '0',
-      content: "''",
-    },
-  },
-  container: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-  },
-  subtitle: {
-    fontSize: '1.3rem',
-    fontWeight: 'bold',
-  },
-  center: {
-    justifyContent: 'center',
-  },
-})
+import SectionStyles from 'assets/jss/components/SectionStyles'
 
 const Section = ({
   classes,
@@ -104,4 +61,4 @@ const Section = ({
   )
 }
 
-export default withStyles(styles)(Section)
+export default withStyles(SectionStyles)(Section)
