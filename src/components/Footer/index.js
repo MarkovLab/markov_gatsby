@@ -21,7 +21,7 @@ const Footer = ({ classes }) => (
   <div className={classes.footer}>
     <Container className={classes.contact}>
       <Typography variant="body1">
-        &copy; 2019 Markov Lab Inc. All rights reserved.
+        &copy; 2019 Markov Lab. All rights reserved.
       </Typography>
       <Link href="mailto:info@markovlab.ai" variant="body1" color="inherit">
         info@markovlab.ai
