@@ -2,39 +2,14 @@ import React from 'react'
 import { Link as RouterLink } from 'gatsby'
 
 import { withStyles } from '@material-ui/core/styles'
-import { AppBar, Toolbar, Link, Hidden } from '@material-ui/core'
+import { AppBar, Toolbar, Link, Container, Typography } from '@material-ui/core'
 
 import Logo from 'assets/images/logos/ml-logo.svg'
 
-import DesktopMenu from './DesktopMenu'
-import MobileMenu from './MobileMenu'
+import { LogoIcon, FullIcon } from 'components/LogoIcon'
+import MLIcon from 'components/MLIcon'
 
-const styles = theme => ({
-  appBar: {
-    zIndex: theme.zIndex.drawer + 1,
-  },
-  grow: {
-    flexGrow: 1,
-  },
-  flexRow: {
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  leftContainer: {
-    display: 'flex',
-    alignItems: 'center',
-  },
-  logoLink: {
-    display: 'flex',
-    alignSelf: 'center',
-  },
-  logo: {
-    width: 170,
-    alignSelf: 'center',
-    margin: 0,
-  },
-})
+import navbarStyle from 'assets/jss/components/navbarStyle'
 
 class Navbar extends React.Component {
   render() {
@@ -48,23 +23,15 @@ class Navbar extends React.Component {
         id="navbar"
       >
         <Toolbar>
-          <div className={classes.grow}>
-            <div className={classes.leftContainer}>
-              <Link to="/" component={RouterLink} className={classes.logoLink}>
-                <img src={Logo} className={classes.logo} alt="Markov Lab" />
-              </Link>
+          <Container maxWwidth="md">
+            <div className={classes.logo}>
+              <LogoIcon /><Typography variant="h5" className={classes.logoText} >Markov Lab </Typography>
             </div>
-          </div>
-          <Hidden smDown>
-            <DesktopMenu />
-          </Hidden>
-          <Hidden mdUp>
-            <MobileMenu />
-          </Hidden>
+          </Container>
         </Toolbar>
       </AppBar>
     )
   }
 }
 
-export default withStyles(styles)(Navbar)
+export default withStyles(navbarStyle)(Navbar)

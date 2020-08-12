@@ -3,14 +3,7 @@ import React from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
 import SvgIcon from "@material-ui/core/SvgIcon";
 
-const styles = theme => ({
-  cls: {
-    fill: "#fff",
-    stroke: "#fff",
-    strokeMiterlimit: 10,
-    strokeWidth: "11.14px"
-  }
-});
+import logoiconStyle from 'assets/jss/components/logoiconStyle'
 
 const LogiIcon = props => {
   const { classes } = props;
@@ -34,4 +27,4 @@ const LogiIcon = props => {
   );
 };
 
-export default withStyles(styles)(LogiIcon);
+export default withStyles(logoiconStyle)(LogiIcon);

@@ -2,24 +2,9 @@ import React from 'react'
 
 import withStyles from '@material-ui/core/styles/withStyles'
 
-import { Button } from '@material-ui/core'
+import { Button, rgbToHex } from '@material-ui/core'
 
-const styles = theme => {
-  return {
-    button: {
-      fontFamily: theme.typography.title.fontFamily,
-      borderWidth: 5,
-      borderColor: 'white',
-      color: 'white',
-      textTransform: 'capitalize',
-      '&:hover': {
-        borderColor: 'white',
-        borderWidth: 5,
-        textDecoration: 'underline',
-      },
-    },
-  }
-}
+import mlbuttonStyle from 'assets/jss/components/mlbuttonStyle';
 
 const MLButton = ({ classes, children, ...rest }) => {
   return (
@@ -34,4 +19,4 @@ const MLButton = ({ classes, children, ...rest }) => {
   )
 }
 
-export default withStyles(styles)(MLButton)
+export default withStyles(mlbuttonStyle)(MLButton)

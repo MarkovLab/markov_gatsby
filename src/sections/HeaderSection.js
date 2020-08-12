@@ -6,34 +6,14 @@ import { Typography, Fade, Container } from '@material-ui/core'
 
 import MLButton from 'components/MLButton'
 import Section from 'components/Section'
+import SubscribeForm from 'components/SubscribeForm'
 
 import bg from 'assets/images/background/bg4.jpg'
 
 import Context from 'context'
 
-const styles = theme => {
-  return {
-    container: {
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center',
-    },
-    header: {
-      [theme.breakpoints.only('xs')]: {
-        paddingTop: 100,
-      },
-    },
-    buttons: {
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      [theme.breakpoints.only('xs')]: {
-        flexDirection: 'column',
-      },
-    },
-  }
-}
+import headerStyle from 'assets/jss/sections/headerStyle'
+
 
 class HeaderSection extends Component {
   constructor(props) {
@@ -70,7 +50,7 @@ class HeaderSection extends Component {
               gutterBottom
               align="center"
             >
-              Expand Your Investment Universe
+              Power Deep Learning
             </Typography>
           </Fade>
           <Fade in={fadeIn} timeout={2000}>
@@ -93,35 +73,15 @@ class HeaderSection extends Component {
               Explore a new way to invest in Japan and Emerging Markets
             </Typography>
           </Fade>
-
-          <Context.Consumer>
-            {({ setSection }) => (
-              <div className={classes.buttons}>
-                <Fade in={fadeIn} timeout={3000}>
-                  <MLButton
-                    size="large"
-                    style={{ width: 200, margin: '25px 5px 25px 5px' }}
-                    onClick={() => setSection('mission')}
-                  >
-                    Learn More
-                  </MLButton>
-                </Fade>
-                <Fade in={fadeIn} timeout={3000}>
-                  <MLButton
-                    size="large"
-                    style={{ width: 200, margin: '25px 5px 25px 5px' }}
-                    onClick={() => setSection('demo')}
-                  >
-                    Request Demo
-                  </MLButton>
-                </Fade>
-              </div>
-            )}
-          </Context.Consumer>
+          <Fade in={fadeIn} timeout={3000}>
+            <div className={classes.subscribe}>
+              <SubscribeForm />
+            </div>            
+          </Fade>
         </Container>
       </Section>
     )
   }
 }
 
-export default withStyles(styles)(HeaderSection)
+export default withStyles(headerStyle)(HeaderSection)
