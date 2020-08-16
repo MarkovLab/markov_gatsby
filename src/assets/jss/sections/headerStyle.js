@@ -21,7 +21,7 @@ const headerStyle = theme => {
       },
       subscribe: {
           width: '70%',
-          marginTop: 35
+          marginTop: 200
       }
     }
   }

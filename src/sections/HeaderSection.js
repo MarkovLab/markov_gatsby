@@ -48,9 +48,8 @@ class HeaderSection extends Component {
               variant="h3"
               color="inherit"
               gutterBottom
-              align="center"
             >
-              Power Deep Learning
+              Accelerate Machine Learning
             </Typography>
           </Fade>
           <Fade in={fadeIn} timeout={2000}>
@@ -58,9 +57,8 @@ class HeaderSection extends Component {
               variant="h4"
               color="inherit"
               gutterBottom
-              align="center"
             >
-              Powered by Andrey, the AI Analyst
+              Powered of bare-metal
             </Typography>
           </Fade>
           <Fade in={fadeIn} timeout={3000}>
@@ -68,7 +66,6 @@ class HeaderSection extends Component {
               variant="h6"
               color="inherit"
               gutterBottom
-              align="center"
             >
               Explore a new way to invest in Japan and Emerging Markets
             </Typography>
