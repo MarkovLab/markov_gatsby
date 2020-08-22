@@ -1,15 +1,16 @@
 import React from 'react'
-import { Link as RouterLink } from 'gatsby'
 
 import { withStyles } from '@material-ui/core/styles'
-import { AppBar, Toolbar, Link, Container, Typography } from '@material-ui/core'
+import { AppBar, Toolbar, Hidden, Typography, Container } from '@material-ui/core'
 
 import Logo from 'assets/images/logos/ml-logo.svg'
 
-import { LogoIcon, FullIcon } from 'components/LogoIcon'
-import MLIcon from 'components/MLIcon'
+import { LogoIcon } from 'components/LogoIcon'
 
 import navbarStyle from 'assets/jss/components/navbarStyle'
+
+import DesktopMenu from './DesktopMenu'
+import MobileMenu from './MobileMenu'
 
 class Navbar extends React.Component {
   render() {
@@ -23,11 +24,15 @@ class Navbar extends React.Component {
         id="navbar"
       >
         <Toolbar>
-          <Container maxWwidth="md">
-            <div className={classes.logo}>
-              <LogoIcon /><Typography variant="h5" className={classes.logoText} >Markov Lab </Typography>
-            </div>
-          </Container>
+          <div className={classes.logo}>
+            <LogoIcon /><Typography variant="h5" className={classes.logoText} >Markov Lab </Typography>
+          </div>
+          <Hidden smDown>
+            <DesktopMenu />
+        </Hidden>
+        <Hidden mdUp>
+          <MobileMenu />
+        </Hidden>
         </Toolbar>
       </AppBar>
     )

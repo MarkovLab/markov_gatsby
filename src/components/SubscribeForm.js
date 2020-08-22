@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import withStyles from '@material-ui/core/styles/withStyles'
 
-import { Typography, Grid, TextField } from "@material-ui/core";
+import { Typography, TextField } from "@material-ui/core";
 
 import MLButton from "components/MLButton"
 
@@ -58,7 +58,7 @@ class SubscribeForm extends Component {
       <>
         {success ? (
           <Typography variant="h6">
-            Thank you!
+            Thank you!  We will keep you informed with updates.
           </Typography>
         ) : (
           <Typography variant="h6">

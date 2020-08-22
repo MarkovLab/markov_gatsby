@@ -11,6 +11,11 @@ const footerStyle = theme => ({
       display: 'flex',
       justifyContent: 'space-between',
     },
+    bottom: {
+      padding: "10px 0",
+      backgroundColor: theme.palette.primary.main,
+      color: 'white'
+    }
   })
 
   export default footerStyle;

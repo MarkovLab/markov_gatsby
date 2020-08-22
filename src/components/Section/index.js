@@ -80,7 +80,7 @@ const Section = ({
   }
   return (
     <section className={sectionClass} {...rest} style={style}>
-      <Grid container spacing={2} justify="center">
+      <Grid container spacing={0} justify="center">
         <Grid item xs={11} className={containerClass}>
           {title && (
             <>

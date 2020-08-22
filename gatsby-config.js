@@ -4,8 +4,37 @@ module.exports = {
   siteMetadata: {
     title: 'Markov Lab',
     author: 'Richard Kim',
-    description:
-      'Markov Lab: Combining collective intelligence and artificial intelligence in finance',
+    email: "info@markovlab.ai",
+    company: "Markov Lab, LLC",
+    streetAddress: "186 Alewife Brook Pkwy",
+    city: "Cambridge",
+    state: "MA",
+    zipCode: "02138",
+    description: 'Markov Lab: Accelerate Machine Learning',
+    navLinks: [
+      {
+        text: 'Learn',
+        url: '#learn',
+      },
+      {
+        text: 'Workstations',
+        url: '#workstations',
+      },
+      {
+        text: 'Blog',
+        url: '#blog',
+      },
+      {
+        text: 'FAQ',
+        url: '#faq',
+      },
+      {
+        text: 'Contact Us',
+        url: '#contact',
+        button: true
+      }
+    ]
+    
   },
   plugins: [
     `gatsby-plugin-material-ui`,

@@ -16,7 +16,8 @@ const navbarStyle = theme => ({
     },
     logo: {
       display: 'flex',
-      alignSelf: 'center'
+      alignSelf: 'center',
+      flexGrow: 1
     },
     logoText: {
       color: 'white',
