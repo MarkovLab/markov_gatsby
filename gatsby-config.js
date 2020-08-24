@@ -13,24 +13,24 @@ module.exports = {
     description: 'Markov Lab: Accelerate Machine Learning',
     navLinks: [
       {
-        text: 'Learn',
-        url: '#learn',
+        text: 'Home',
+        url: '/'
       },
       {
         text: 'Workstations',
-        url: '#workstations',
+        url: '/workstations/',
       },
       {
         text: 'Blog',
-        url: '#blog',
+        url: '/blog/',
       },
       {
         text: 'FAQ',
-        url: '#faq',
+        url: '/faq/',
       },
       {
         text: 'Contact Us',
-        url: '#contact',
+        url: '/contact/',
         button: true
       }
     ]
@@ -80,6 +80,28 @@ module.exports = {
         context: path.join(__dirname, 'src/context'),
       },
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/static/img`,
+        name: 'uploads'
+      }
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/src/pages`,
+        name: 'pages'
+      }
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/src/assets`,
+        name: 'assets'
+      }
+    },
+    'gatsby-transformer-remark',
     'gatsby-plugin-offline',
     'gatsby-plugin-netlify',
   ],

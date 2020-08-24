@@ -1,17 +1,19 @@
 import React, { Component } from 'react'
-
+import { graphql, Link } from 'gatsby'
 import { Typography, Container } from '@material-ui/core'
 import Section from 'components/Section'
+import BlogPostCard from 'components/BlogPostCard'
+
 
 class BlogSection extends Component {
     render() {
-        const { classes, ...rest } = this.props
+        const { classes, data, ...rest } = this.props
+        // const posts = data.allMarkdownRemark.edges.map(edge => edge.node.frontmatter)
+
         return (
-            <Section {...rest}>
+            <Section {...rest} title="Blog">
                 <Container maxWidth="md">
-                    <Typography variant="h3">
-                        Blog
-                    </Typography>
+                    {/* {posts.map(post => (BlogPostCard(post)))} */}
                 </Container>
             </Section>
         )
@@ -19,3 +21,24 @@ class BlogSection extends Component {
 }
 
 export default BlogSection
+
+export const blogQuery = graphql`
+    query blogQuery {
+        allMarkdownRemark(filter: 
+                {frontmatter: {templateKey: { eq: "blog-post" }}}) {
+        edges {
+            node {
+            id
+            frontmatter {
+                title
+                templateKey
+                date
+                featuredpost
+                featuredimage
+                description
+            }
+            }
+        }
+        }
+    }
+`

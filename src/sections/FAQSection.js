@@ -7,9 +7,9 @@ class FAQSection extends Component {
     render() {
         const { classes, ...rest } = this.props
         return (
-            <Section {...rest}>
+            <Section {...rest} title="Frequently Asked Questions (FAQ)">
                 <Container maxWidth="md">
-                    <Typography variant="h3">
+                    <Typography variant="h6">
                         Frequently Asked Questions
                     </Typography>
                 </Container>

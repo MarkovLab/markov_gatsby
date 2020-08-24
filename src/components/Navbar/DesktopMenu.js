@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { StaticQuery, graphql } from "gatsby"
+import { StaticQuery, graphql, Link } from "gatsby"
 
 import { withStyles } from '@material-ui/core/styles'
 
@@ -17,7 +17,7 @@ class DesktopMenu extends Component {
       <StaticQuery
         query={
           graphql`
-          query NavbarQuery {
+          query {
             site { 
               siteMetadata {
                 navLinks {
@@ -33,32 +33,30 @@ class DesktopMenu extends Component {
         render={data => {
           const menu = data.site.siteMetadata.navLinks;
           return (
-            <Context.Consumer>
-              {({ section, setSection }) => (
-                <>
-                  {menu.map(item => {
-                    if (item.button) {
-                      return <MLButton
-                                color="inherit"
-                                onClick={() => setSection(item.url)}
-                                style={{ marginLeft: 10 }}
-                              >
-                                {item.text}
-                              </MLButton>
-                    } else {
-                      return <Button 
-                                color="inherit" 
-                                className={classes.menuLink}
-                                onClick={() => setSection(item.url)}
-                              >
-                                {item.text}
-                              </Button>
-                    }
-                  }
-                  )}
-                </>
+            <>
+              {menu.map(item => {
+                if (item.button) {
+                  return <MLButton
+                            color="inherit"
+                            component={Link}
+                            to={item.url}
+                            style={{ marginLeft: 10 }}
+                          >
+                            {item.text}
+                          </MLButton>
+                } else {
+                  return <Button 
+                            color="inherit" 
+                            className={classes.menuLink}
+                            component={Link}
+                            to={item.url}
+                          >
+                            {item.text}
+                          </Button>
+                }
+              }
               )}
-            </Context.Consumer>
+            </>
           )
         }}
       />

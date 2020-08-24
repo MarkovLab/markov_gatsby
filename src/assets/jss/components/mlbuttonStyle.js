@@ -12,6 +12,12 @@ const mlbuttonStyle = theme => {
           backgroundColor: "rgba(0,0,0,0.2)"
         },
       },
+      filled: {
+        backgroundColor: theme.palette.primary.main,
+        '&:hover': {
+          backgroundColor: theme.palette.secondary.main
+        }
+      }
     }
   }
 

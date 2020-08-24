@@ -1,17 +1,22 @@
 import React from 'react'
-
+import classNames from 'classnames'
 import withStyles from '@material-ui/core/styles/withStyles'
 
-import { Button, rgbToHex } from '@material-ui/core'
+import { Button } from '@material-ui/core'
 
 import mlbuttonStyle from 'assets/jss/components/mlbuttonStyle';
 
-const MLButton = ({ classes, children, ...rest }) => {
+const MLButton = ({ classes, filled, children, ...rest }) => {
+  
+  const buttonClass = classNames(
+    classes.button,
+    { [classes.filled]: filled }
+  )
+
   return (
     <Button
       variant="outlined"
-      color="primary"
-      className={classes.button}
+      className={buttonClass}
       {...rest}
     >
       {children}

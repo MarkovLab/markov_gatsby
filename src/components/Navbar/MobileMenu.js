@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { StaticQuery, graphql, Link } from "gatsby"
 import { withStyles } from '@material-ui/core/styles'
 
 import {
@@ -67,71 +68,56 @@ class MobileMenu extends Component {
     const primaryTypographyProps = {
       className: classes.listItemText,
     }
-
     return (
-      <Context.Consumer>
-        {({ section, setSection }) => (
-          <>
-            <IconButton
-              color="secondary"
-              onClick={this.toggleDrawer}
-              className={classes.iconButton}
-            >
-              <MenuIcon style={{ color: 'white' }} />
-            </IconButton>
-            <SwipeableDrawer
-              anchor="left"
-              open={open}
-              onClose={this.toggleDrawer}
-              onOpen={this.toggleDrawer}
-            >
-              <List className={classes.list}>
-                <ListItem button>
-                  <ListItemText
-                    primary="Home"
-                    key="home"
-                    onClick={this.handleClick('home', setSection)}
-                    primaryTypographyProps={primaryTypographyProps}
-                  />
-                </ListItem>
-                <ListItem button>
-                  <ListItemText
-                    primary="Mission"
-                    key="mission"
-                    onClick={this.handleClick('mission', setSection)}
-                    primaryTypographyProps={primaryTypographyProps}
-                  />
-                </ListItem>
-                <ListItem button>
-                  <ListItemText
-                    primary="Challenges"
-                    key="challenges"
-                    onClick={this.handleClick('challenges', setSection)}
-                    primaryTypographyProps={primaryTypographyProps}
-                  />
-                </ListItem>
-                <ListItem button>
-                  <ListItemText
-                    primary="AI Solution"
-                    key="solution"
-                    onClick={this.handleClick('solution', setSection)}
-                    primaryTypographyProps={primaryTypographyProps}
-                  />
-                </ListItem>
-                <ListItem button>
-                  <ListItemText
-                    primary="Request Demo"
-                    key="demo"
-                    onClick={this.handleClick('demo', setSection)}
-                    primaryTypographyProps={primaryTypographyProps}
-                  />
-                </ListItem>
-              </List>
-            </SwipeableDrawer>
-          </>
-        )}
-      </Context.Consumer>
-    )
+      <StaticQuery
+        query={
+          graphql`
+            query {
+              site { 
+                siteMetadata {
+                  navLinks {
+                    text
+                    url
+                    button
+                  }
+                } 
+              } 
+            }
+        `}
+        render={data => {
+          const menu = data.site.siteMetadata.navLinks;
+          return (
+                <>
+                  <IconButton
+                    color="secondary"
+                    onClick={this.toggleDrawer}
+                    className={classes.iconButton}
+                  >
+                    <MenuIcon style={{ color: 'white' }} />
+                  </IconButton>
+                  <SwipeableDrawer
+                    anchor="left"
+                    open={open}
+                    onClose={this.toggleDrawer}
+                    onOpen={this.toggleDrawer}
+                  >
+                    <List className={classes.list}>
+                      {menu.map(item => (
+                        <ListItem button component={Link} to={item.url}>
+                          <ListItemText
+                            primary={item.text}
+                            key={item.text}
+                            primaryTypographyProps={primaryTypographyProps}
+                          />
+                        </ListItem>
+                      ))}
+                    </List>
+                  </SwipeableDrawer>
+                </>
+            )
+          }}
+      />
+      )
   }
 }
 

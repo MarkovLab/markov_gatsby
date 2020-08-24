@@ -2,6 +2,10 @@ const navbarStyle = theme => ({
     appBar: {
       zIndex: theme.zIndex.drawer + 1,
     },
+    transparent: {
+      backgroundColor: "rgba(0,0,0,0)",
+      boxShadow: "none"
+    },
     grow: {
       flexGrow: 1,
     },
@@ -17,7 +21,10 @@ const navbarStyle = theme => ({
     logo: {
       display: 'flex',
       alignSelf: 'center',
-      flexGrow: 1
+      flexGrow: 1,
+    },
+    link: {
+      textDecoration: "none"
     },
     logoText: {
       color: 'white',
