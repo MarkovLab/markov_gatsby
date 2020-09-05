@@ -1,9 +1,24 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
 import { graphql, Link } from 'gatsby'
 
+import { Typography, Container, Grid, Chip } from '@material-ui/core'
+
+import Section from 'components/Section'
 import { LandingLayout } from 'components/Layout'
+import Content, { HTMLContent } from 'components/Content'
+
+import HeaderSection from 'sections/HeaderSection'
+
+
+const blogposttemplateStyle = theme => ({
+  root: {
+    paddingTop: 60
+  },
+  subtitle: {
+    display: "inline"
+  }
+})
 
 
 const BlogPostTemplate = ({
@@ -12,14 +27,41 @@ const BlogPostTemplate = ({
   description,
   tags,
   title,
+  author,
+  date,
   helmet
 }) => {
-  const PostContent = contentComponent
+  const PostContent = contentComponent || Content
 
   return (
-    <section>
-        {title} 
-    </section>
+    <div>
+        <Section halfScreen vcenter shaded>
+          <Container maxWidth="lg">
+            <Grid container spacing={0}>
+              <Grid item xs={12} sm={7}>
+                <Typography variant="h4" gutterBottom>{title}</Typography>
+                <div >
+                  <Typography variant="h6" style={{
+                  display: 'inline'
+                }}>{author} </Typography>
+                  <Typography variant="body1" style={{
+                  display: 'inline'
+                }}>{date}</Typography>
+                </div>
+                <Typography variant="body2">
+                  {description}
+                </Typography>
+              </Grid>  
+            </Grid>
+          </Container>
+        </Section>
+        <Section>
+          <PostContent content={content} />
+        </Section>
+        <Section hcenter vcenter>
+          {tags.map((tag, key) => <Chip key={key} label={tag} />)}
+        </Section>
+    </div>
   )
 }
 
@@ -27,7 +69,10 @@ BlogPostTemplate.propTypes = {
   content: PropTypes.node.isRequired,
   contentComponent: PropTypes.func,
   description: PropTypes.string,
-  title: PropTypes.string
+  title: PropTypes.string,
+  author: PropTypes.string,
+  date: PropTypes.string,
+  tags: PropTypes.arrayOf(PropTypes.string)
 }
 
 
@@ -38,6 +83,12 @@ const BlogPost = ({ data }) => {
     <LandingLayout>
       <BlogPostTemplate 
         title={post.frontmatter.title}
+        author={post.frontmatter.author}
+        date={post.frontmatter.date}
+        content={post.html}
+        contentComponent={HTMLContent}
+        description={post.frontmatter.description}
+        tags={post.frontmatter.tags}
       />
     </LandingLayout>
   )
@@ -53,8 +104,9 @@ export const pageQuery = graphql`
       id
       html
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
         title
+        date(formatString: "MMMM DD, YYYY")
+        author
         description
         tags
       }

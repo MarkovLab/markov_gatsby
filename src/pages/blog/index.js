@@ -6,8 +6,9 @@ import { Typography, Container, Fade } from "@material-ui/core"
 
 import Section from 'components/Section'
 import { LandingLayout } from 'components/Layout'
+import BlogRoll from 'components/BlogRoll'
+
 import HeaderSection from 'sections/HeaderSection'
-import BlogSection from 'sections/BlogSection'
 
 import bg from 'assets/images/background/bg2.jpg'
 import blogpageStyle from 'assets/jss/pages/blogpageStyle'
@@ -20,10 +21,9 @@ class BlogPage extends Component {
             <LandingLayout>
                 <HeaderSection image={bg} shaded title="Markov Lab Blog" />
                 <Section>
-                    <Typography variant="h4">
-                        Blog
-                    </Typography>
+                    <BlogRoll />
                 </Section>
+
             </LandingLayout>
         )
     }
