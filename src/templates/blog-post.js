@@ -5,21 +5,14 @@ import { graphql, Link } from 'gatsby'
 import { Typography, Container, Grid, Chip } from '@material-ui/core'
 
 import Section from 'components/Section'
+import SEO from 'components/SEO'
 import { LandingLayout } from 'components/Layout'
 import Content, { HTMLContent } from 'components/Content'
 
 import HeaderSection from 'sections/HeaderSection'
+import blogposttemplateStyle from 'assets/jss/components/blogposttemplateStyle'
 
-
-const blogposttemplateStyle = theme => ({
-  root: {
-    paddingTop: 60
-  },
-  subtitle: {
-    display: "inline"
-  }
-})
-
+import 'assets/sass/main.sass'
 
 const BlogPostTemplate = ({
   content,
@@ -29,38 +22,38 @@ const BlogPostTemplate = ({
   title,
   author,
   date,
-  helmet
+  featuredImage
 }) => {
   const PostContent = contentComponent || Content
 
   return (
-    <div>
-        <Section halfScreen vcenter shaded>
-          <Container maxWidth="lg">
-            <Grid container spacing={0}>
-              <Grid item xs={12} sm={7}>
-                <Typography variant="h4" gutterBottom>{title}</Typography>
-                <div >
-                  <Typography variant="h6" style={{
-                  display: 'inline'
-                }}>{author} </Typography>
-                  <Typography variant="body1" style={{
-                  display: 'inline'
-                }}>{date}</Typography>
-                </div>
-                <Typography variant="body2">
-                  {description}
-                </Typography>
-              </Grid>  
-            </Grid>
-          </Container>
-        </Section>
-        <Section>
-          <PostContent content={content} />
-        </Section>
-        <Section hcenter vcenter>
-          {tags.map((tag, key) => <Chip key={key} label={tag} />)}
-        </Section>
+    <div id="blog-post">
+      <Section halfScreen vcenter shaded image={featuredImage}>
+        <Container maxWidth="lg">
+          <Grid container spacing={0}>
+            <Grid item xs={12} sm={7}>
+              <Typography variant="h4" gutterBottom>{title}</Typography>
+              <div >
+                <Typography variant="h6" style={{
+                display: 'inline'
+              }}>{author} </Typography>
+                <Typography variant="body1" style={{
+                display: 'inline'
+              }}>{date}</Typography>
+              </div>
+              <Typography variant="body2">
+                {description}
+              </Typography>
+            </Grid>  
+          </Grid>
+        </Container>
+      </Section>
+      <Section id="blog-content">
+        <PostContent content={content} />
+      </Section>
+      <Section hcenter vcenter>
+        {tags.map((tag, key) => <Chip key={key} label={tag} />)}
+      </Section>
     </div>
   )
 }
@@ -72,6 +65,7 @@ BlogPostTemplate.propTypes = {
   title: PropTypes.string,
   author: PropTypes.string,
   date: PropTypes.string,
+  featuredImage: PropTypes.string,
   tags: PropTypes.arrayOf(PropTypes.string)
 }
 
@@ -81,10 +75,15 @@ const BlogPost = ({ data }) => {
 
   return (
     <LandingLayout>
+      <SEO 
+        title={post.frontmatter.title}
+        description={post.frontmatter.description}
+      />
       <BlogPostTemplate 
         title={post.frontmatter.title}
         author={post.frontmatter.author}
         date={post.frontmatter.date}
+        featuredImage={post.frontmatter.featuredimage}
         content={post.html}
         contentComponent={HTMLContent}
         description={post.frontmatter.description}
@@ -107,6 +106,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         author
+        featuredimage
         description
         tags
       }
